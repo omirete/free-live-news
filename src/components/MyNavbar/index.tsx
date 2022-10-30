@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
-import Toggler from "./Toggler";
+import { Container, Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export interface NavbarState {
   expanded: boolean;
@@ -12,15 +11,17 @@ const MyNavbar: React.FC = () => {
   return (
     <Navbar bg="light" variant="light" expand="md">
       <Container>
-        <Navbar.Brand href="/">
-          <img
-            alt="Logo"
-            src="/news.svg"
-            width="30"
-            height="30"
-            className="d-inline-block align-top"
-          />{" "}
-          Free live news
+        <Navbar.Brand>
+          <Link to="/" className="text-decoration-none text-dark">
+            <img
+              alt="Logo"
+              src="/news.svg"
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+            />{" "}
+            Free live news
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -29,11 +30,15 @@ const MyNavbar: React.FC = () => {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="/">News</Nav.Link>
-            <Nav.Link href="interesting-channels">
+            <Link to="/" className="nav-link">
+              News
+            </Link>
+            <Link to="interesting-channels" className="nav-link">
               Interesting channels
-            </Nav.Link>
-            <Nav.Link href="search">Search</Nav.Link>
+            </Link>
+            <Link to="search" className="nav-link">
+              Search
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
