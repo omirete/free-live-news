@@ -9,11 +9,13 @@ const SearchForm: React.FC<Omit<UseYoutubeSearch, "searchResults">> = ({
 }) => {
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const q = form.elements.namedItem("q") as HTMLInputElement;
     const params: YoutubeSearchParams = {
       part: "snippet",
       type: "video",
       eventType: "live",
-      q: (e.target as any).elements["q"].value,
+      q: q.value,
     };
     search(params);
   };

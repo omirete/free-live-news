@@ -47,10 +47,11 @@ const MyNavbar: React.FC = () => {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            {navLinks.map((nl) => {
+            {navLinks.map((nl, i) => {
               const isActive = activeSection === nl.link;
               return (
                 <Link
+                  key={i}
                   to={nl.link}
                   className={`
                     nav-link

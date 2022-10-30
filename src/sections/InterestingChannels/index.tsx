@@ -24,11 +24,12 @@ const InterestingChannels: React.FC = () => {
     <Container className="mt-3 d-flex flex-wrap">
       {!loading &&
         channelAliases.map((alias, i) => (
-          <div className="m-1">
+          <div key={i} className="m-1">
             <a
               key={i}
               href={`https://www.youtube.com/c/${alias}`}
               target="_blank"
+              rel="noreferrer"
               className={`
                 text-decoration-none py-3 px-4
                 btn
