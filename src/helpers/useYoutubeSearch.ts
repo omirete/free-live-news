@@ -147,7 +147,6 @@ const useYoutubeSearch = (key: string): UseYoutubeSearch => {
       );
       const data = await response.json();
       setSearchResults(data.items);
-      console.log(data.items);
       setLoading(false);
       return data.items;
     },
