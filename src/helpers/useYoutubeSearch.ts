@@ -135,7 +135,11 @@ const useYoutubeSearch = (key: string): UseYoutubeSearch => {
       const options: RequestInit = {
         method: "GET",
       };
-      const params = new URLSearchParams(args as any);
+      const params = new URLSearchParams();
+      Object.keys(args).forEach((key) => {
+        const value: string = args[key as keyof YoutubeSearchParams] as string
+        params.append(key, value)
+      })
       params.set("key", key);
       const response = await fetch(
         `https://www.googleapis.com/youtube/v3/search?${params.toString()}`,
