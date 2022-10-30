@@ -20,17 +20,27 @@ const Thumbnail: React.FC<VideoInfo> = ({
   return (
     <div className="col-12 col-sm-6 col-md-4 col-lg-3 p-1">
       <div className="card">
-        <a href={url}>
+        <a href={url} target="_blank" rel="noreferrer">
           <img src={thumbnailUrl} className="card-img-top" alt={description} />
         </a>
         <div className="card-body">
           <h5 className="card-title text-nowrap overflow-hidden">
-            <a href={url} className="text-decoration-none text-dark">
+            <a
+              href={url}
+              target="_blank"
+              rel="noreferrer"
+              className="text-decoration-none text-dark"
+            >
               {title}
             </a>
           </h5>
           <small className="d-block card-text">
-            <a href={channelUrl} className="text-decoration-none text-muted">
+            <a
+              href={channelUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="text-decoration-none text-muted"
+            >
               {channelTitle}
             </a>
           </small>
