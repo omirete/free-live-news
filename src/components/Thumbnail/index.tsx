@@ -35,7 +35,12 @@ const Thumbnail: React.FC<VideoInfo> = ({
             </a>
           </small>
           <p className="card-text small text-muted">
-            Active since: {publishedAt}
+            Active since:{" "}
+            {new Date(publishedAt as string).toLocaleDateString(undefined, {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
           </p>
         </div>
       </div>
