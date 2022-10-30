@@ -20,10 +20,7 @@ const router = createBrowserRouter(
             path: "/search",
             element: <Search />,
         },
-    ],
-    {
-        basename: "/free-live-news/",
-    }
+    ]
 );
 
 const App = () => {
