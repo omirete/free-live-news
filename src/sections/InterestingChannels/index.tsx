@@ -1,37 +1,51 @@
 import { useEffect, useState } from "react";
-import SearchResults from "../../components/SearchResults";
-import useYoutubeSearch from "../../helpers/useYoutubeSearch";
+import { Container } from "react-bootstrap";
+import charStringToNumber from "../../helpers/charStringToNumber";
 
 const InterestingChannels: React.FC = () => {
-  const { search, loading } = useYoutubeSearch(
-    "AIzaSyD4qpGWzhj8YWhJL5jcs7WDKXCnaqzDMO8"
-  );
-
-  const [searchResults, setSearchResults] = useState<
-    Array<GoogleApiYouTubeSearchResource>
-  >([]);
+  const [loading, setLoading] = useState(false);
+  const [channelAliases, setChannelAliases] = useState<Array<string>>([]);
 
   useEffect(() => {
-    setSearchResults([]);
+    setLoading(true);
+    setChannelAliases([]);
     fetch(`configs/interesting_channels.json`)
       .then((response) => response.json())
       .then((data: Array<{ channel_id: string }>) =>
         data.map((d) => d.channel_id)
       )
       .then((channel_ids) => {
-        // channel_ids.forEach((channelId) => {
-        //     search({ part: 'snippet', channelId }
-        //     ).then((results) => {
-        //         setSearchResults((prev) => {
-        //             prev.push(...results)
-        //             return prev
-        //         })
-        //     })
-        // })
-      });
-  }, [search]);
+        setChannelAliases(channel_ids);
+      })
+      .finally(() => setLoading(false));
+  }, []);
 
-  return <SearchResults loading={loading} searchResults={searchResults} />;
+  return (
+    <Container className="mt-3 d-flex flex-wrap">
+      {!loading &&
+        channelAliases.map((alias, i) => (
+          <div key={i} className="m-1">
+            <a
+              key={i}
+              href={`https://www.youtube.com/c/${alias}`}
+              target="_blank"
+              rel="noreferrer"
+              className={`
+                text-decoration-none py-3 px-4
+                btn
+            `}
+              style={{
+                backgroundColor: `hsl(${
+                  charStringToNumber(alias) % 360
+                }, 100%, 80%)`,
+              }}
+            >
+              {alias}
+            </a>
+          </div>
+        ))}
+    </Container>
+  );
 };
 
 export default InterestingChannels;

@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { ButtonGroup, Container, ToggleButton } from "react-bootstrap";
 import SearchResults from "../../components/SearchResults";
 
