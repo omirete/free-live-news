@@ -30,10 +30,10 @@ const MyNavbar: React.FC = () => {
             navbarScroll
           >
             <Nav.Link href="/">News</Nav.Link>
-            <Nav.Link href="/interesting-channels">
+            <Nav.Link href="interesting-channels">
               Interesting channels
             </Nav.Link>
-            <Nav.Link href="/search">Search</Nav.Link>
+            <Nav.Link href="search">Search</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

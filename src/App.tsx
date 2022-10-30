@@ -5,29 +5,34 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Search from "./sections/Search";
 import MyNavbar from "./components/MyNavbar";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <NewsChannels />,
-    index: true,
-  },
-  {
-    path: "/interesting-channels",
-    element: <InterestingChannels />,
-  },
-  {
-    path: "/search",
-    element: <Search />,
-  },
-]);
+const router = createBrowserRouter(
+    [
+        {
+            path: "/",
+            element: <NewsChannels />,
+            index: true,
+        },
+        {
+            path: "/interesting-channels",
+            element: <InterestingChannels />,
+        },
+        {
+            path: "/search",
+            element: <Search />,
+        },
+    ],
+    {
+        basename: "/free-live-news",
+    }
+);
 
 const App = () => {
-  return (
-    <div>
-      <MyNavbar />
-      <RouterProvider router={router} />
-    </div>
-  );
+    return (
+        <div>
+            <MyNavbar />
+            <RouterProvider router={router} />
+        </div>
+    );
 };
 
 export default App;
