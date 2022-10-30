@@ -1,5 +1,6 @@
+import { useEffect, useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export interface NavbarState {
   expanded: boolean;
@@ -7,7 +8,23 @@ export interface NavbarState {
   height: string;
 }
 
+interface NavLinkInfo {
+  link: string;
+  text: string;
+}
+
+const navLinks: NavLinkInfo[] = [
+  { link: "/", text: "News" },
+  { link: "/interesting-channels", text: "Interesting channels" },
+  { link: "/search", text: "Search" },
+];
+
 const MyNavbar: React.FC = () => {
+  const [activeSection, setActiveSection] = useState<string>("");
+  const location = useLocation();
+  useEffect(() => {
+    setActiveSection(location.pathname); // contains initial '/'
+  }, [location]);
   return (
     <Navbar bg="light" variant="light" expand="md">
       <Container>
@@ -30,15 +47,24 @@ const MyNavbar: React.FC = () => {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Link to="/" className="nav-link">
-              News
-            </Link>
-            <Link to="interesting-channels" className="nav-link">
-              Interesting channels
-            </Link>
-            <Link to="search" className="nav-link">
-              Search
-            </Link>
+            {navLinks.map((nl) => {
+              const isActive = activeSection === nl.link;
+              return (
+                <Link
+                  to={nl.link}
+                  className={`
+                    nav-link
+                    ${
+                      isActive
+                        ? "active border-bottom border-warning border-2"
+                        : ""
+                    }
+                `}
+                >
+                  {nl.text}
+                </Link>
+              );
+            })}
           </Nav>
         </Navbar.Collapse>
       </Container>
