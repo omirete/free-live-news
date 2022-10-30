@@ -22,7 +22,7 @@ const router = createBrowserRouter(
         },
     ],
     {
-        basename: "/free-live-news",
+        basename: "/free-live-news/",
     }
 );
 
