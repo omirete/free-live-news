@@ -38,7 +38,7 @@ const useFilteredData = (): UseFilteredDataReturn => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`configs/news_videos.json`)
+    fetch(`configs/news_videos.json?v1`)
       .then((response) => response.json())
       .then((data: YoutubeResultWithCustomMetadata[]) => setAllData(data))
       .then(() => setLoading(false));
