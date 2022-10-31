@@ -6,7 +6,7 @@ const SearchResults: React.FC<Omit<UseYoutubeSearch, "search">> = ({
   loading,
 }) => {
   return (
-    <div className="mx-3 mt-2 mb-4 p-2 rounded border shadow-sm">
+    <div className="mt-2 mb-4 p-2 rounded border shadow-sm">
       {!loading && searchResults && (
         <div className="d-flex flex-row flex-wrap">
           {searchResults.map((searchResult) => {
