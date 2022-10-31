@@ -20,7 +20,7 @@ const SearchForm: React.FC<Omit<UseYoutubeSearch, "searchResults">> = ({
     search(params);
   };
   return (
-    <div className="mx-3 my-4 p-2 rounded border shadow-sm">
+    <div className="my-4 p-2 rounded border shadow-sm">
       <form onSubmit={handleSubmit}>
         <div className="input-group">
           <input
