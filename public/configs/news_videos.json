@@ -2,7 +2,8 @@
   {
     "custom_metadata": {
       "lang": "en",
-      "region": "uk"
+      "region": "uk",
+      "type": "news"
     },
     "kind": "youtube#searchResult",
     "etag": "bDrJ9phkYkLaT66fkBsU9CzwPfA",
@@ -40,7 +41,8 @@
   {
     "custom_metadata": {
       "lang": "en",
-      "region": "eu"
+      "region": "eu",
+      "type": "news"
     },
     "kind": "youtube#searchResult",
     "etag": "IV5evzSlxRppSpnksa6UigA3WaY",
@@ -78,7 +80,8 @@
   {
     "custom_metadata": {
       "lang": "es",
-      "region": "ar"
+      "region": "ar",
+      "type": "news"
     },
     "kind": "youtube#searchResult",
     "etag": "rdZlc3gmNW5AUM5t_15hzwczjf0",
@@ -116,7 +119,8 @@
   {
     "custom_metadata": {
       "lang": "es",
-      "region": "ar"
+      "region": "ar",
+      "type": "news"
     },
     "kind": "youtube#searchResult",
     "etag": "qjpf6NPWkP-9TLgLe2Nym6ZWwbQ",
@@ -154,7 +158,8 @@
   {
     "custom_metadata": {
       "lang": "es",
-      "region": "ar"
+      "region": "ar",
+      "type": "news"
     },
     "kind": "youtube#searchResult",
     "etag": "bHk4Ygerq2H5lW4SE4Smml3WGdI",
@@ -192,7 +197,8 @@
   {
     "custom_metadata": {
       "lang": "es",
-      "region": "ar"
+      "region": "ar",
+      "type": "news"
     },
     "kind": "youtube#searchResult",
     "etag": "vji8yKq5movtYIuarufjEIpPZbY",
@@ -230,7 +236,8 @@
   {
     "custom_metadata": {
       "lang": "es",
-      "region": "ar"
+      "region": "ar",
+      "type": "news"
     },
     "kind": "youtube#searchResult",
     "etag": "9KCYQgtFGYs7TVRaKaeZk9O3BCA",
@@ -268,7 +275,8 @@
   {
     "custom_metadata": {
       "lang": "es",
-      "region": "ar"
+      "region": "ar",
+      "type": "news"
     },
     "kind": "youtube#searchResult",
     "etag": "ubD7l2vC8Z74-_OV-mIpjAXFWps",
@@ -306,7 +314,8 @@
   {
     "custom_metadata": {
       "lang": "es",
-      "region": "eu"
+      "region": "eu",
+      "type": "news"
     },
     "kind": "youtube#searchResult",
     "etag": "O7gDRkcxnQQzaffpZC-yoy1nZQM",
@@ -344,7 +353,8 @@
   {
     "custom_metadata": {
       "lang": "en",
-      "region": "eu"
+      "region": "eu",
+      "type": "news"
     },
     "kind": "youtube#searchResult",
     "etag": "uogP-7Klk-G9M04vz4UOj7ohv1w",
@@ -382,7 +392,8 @@
   {
     "custom_metadata": {
       "lang": "en",
-      "region": "asia"
+      "region": "asia",
+      "type": "news"
     },
     "kind": "youtube#searchResult",
     "etag": "fb0vSwJvVLZYKrvM-TQ1Ytsz3HI",
@@ -420,7 +431,8 @@
   {
     "custom_metadata": {
       "lang": "en",
-      "region": "eu"
+      "region": "eu",
+      "type": "news"
     },
     "kind": "youtube#searchResult",
     "etag": "RUfA5Oa1mjU2LfFTM59RtlFEzeY",
@@ -458,7 +470,8 @@
   {
     "custom_metadata": {
       "lang": "de",
-      "region": "eu"
+      "region": "eu",
+      "type": "news"
     },
     "kind": "youtube#searchResult",
     "etag": "Kq2Cuirv_MmDteHw6kLXU8MaaD4",
@@ -496,7 +509,8 @@
   {
     "custom_metadata": {
       "lang": "de",
-      "region": "eu"
+      "region": "eu",
+      "type": "news"
     },
     "kind": "youtube#searchResult",
     "etag": "4u9K3_cxY_3WrcKHacaYFCw9mSA",
@@ -534,7 +548,8 @@
   {
     "custom_metadata": {
       "lang": "es",
-      "region": "eu"
+      "region": "eu",
+      "type": "news"
     },
     "kind": "youtube#searchResult",
     "etag": "tzDbW451gboVudohbOBGJuBgvcY",
@@ -572,7 +587,8 @@
   {
     "custom_metadata": {
       "lang": "fr",
-      "region": "eu"
+      "region": "eu",
+      "type": "news"
     },
     "kind": "youtube#searchResult",
     "etag": "CERwVhcrewQTN_7sP87Sn4qSnIE",
@@ -610,7 +626,8 @@
   {
     "custom_metadata": {
       "lang": "es",
-      "region": "eu"
+      "region": "eu",
+      "type": "news"
     },
     "kind": "youtube#searchResult",
     "etag": "krgPVLYXeAk1mC6Hunmlx_4wrqo",
@@ -648,7 +665,8 @@
   {
     "custom_metadata": {
       "lang": "fr",
-      "region": "eu"
+      "region": "eu",
+      "type": "news"
     },
     "kind": "youtube#searchResult",
     "etag": "BEzB850MYkrLfEI2Nytl8ZKst3M",
@@ -686,7 +704,8 @@
   {
     "custom_metadata": {
       "lang": "en",
-      "region": "us"
+      "region": "us",
+      "type": "news"
     },
     "kind": "youtube#searchResult",
     "etag": "LtTnH5xKeICA-lOajmdLvuqeGhk",
@@ -719,6 +738,279 @@
       "channelTitle": "Vox",
       "liveBroadcastContent": "live",
       "publishTime": "2022-10-13T13:05:51Z"
+    }
+  },
+  {
+    "custom_metadata": {
+      "lang": "es",
+      "region": "mx",
+      "type": "news"
+    },
+    "kind": "youtube#searchResult",
+    "etag": "YBoi--qiS-BFgGP9zQD3kobZiYc",
+    "id": {
+      "kind": "youtube#video",
+      "videoId": "UWNlpWsNS4M"
+    },
+    "snippet": {
+      "publishedAt": "2022-05-20T06:05:26Z",
+      "channelId": "UCFxHplbcoJK9m70c4VyTIxg",
+      "title": "Noticias EN VIVO | Milenio Noticias",
+      "description": "Milenio Noticias EN VIVO. #Milenio #MilenioNoticias #NoticiasEnVivo Suscríbete a nuestro canal: ...",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/UWNlpWsNS4M/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/UWNlpWsNS4M/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/UWNlpWsNS4M/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "MILENIO",
+      "liveBroadcastContent": "live",
+      "publishTime": "2022-05-20T06:05:26Z"
+    }
+  },
+  {
+    "custom_metadata": {
+      "lang": "en",
+      "region": "us",
+      "type": "entertainment"
+    },
+    "kind": "youtube#searchResult",
+    "etag": "V6fRyrdGMmk-en9J7849lPJhzR4",
+    "id": {
+      "kind": "youtube#video",
+      "videoId": "21X5lGlDOfg"
+    },
+    "snippet": {
+      "publishedAt": "2018-12-28T18:40:15Z",
+      "channelId": "UCLA_DiR1FfKNvjuUpBHmylQ",
+      "title": "NASA Live: Official Stream of NASA TV",
+      "description": "Direct from America's space program to YouTube, watch NASA TV live streaming here to get the latest from our exploration of the ...",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/21X5lGlDOfg/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/21X5lGlDOfg/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/21X5lGlDOfg/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "NASA",
+      "liveBroadcastContent": "live",
+      "publishTime": "2018-12-28T18:40:15Z"
+    }
+  },
+  {
+    "custom_metadata": {
+      "lang": "en",
+      "region": "us",
+      "type": "entertainment"
+    },
+    "kind": "youtube#searchResult",
+    "etag": "9jy40fD2rnQANQ3Y6Gqd6gNkY8g",
+    "id": {
+      "kind": "youtube#video",
+      "videoId": "nA9UZF-SZoQ"
+    },
+    "snippet": {
+      "publishedAt": "2019-02-14T17:18:43Z",
+      "channelId": "UCLA_DiR1FfKNvjuUpBHmylQ",
+      "title": "NASA Live: Official Stream of NASA TV&#39;s Media Channel",
+      "description": "Direct from America's space program to YouTube, watch NASA TV live streaming here to get the latest from our exploration of the ...",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/nA9UZF-SZoQ/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/nA9UZF-SZoQ/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/nA9UZF-SZoQ/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "NASA",
+      "liveBroadcastContent": "live",
+      "publishTime": "2019-02-14T17:18:43Z"
+    }
+  },
+  {
+    "custom_metadata": {
+      "lang": "en",
+      "region": "ng",
+      "type": "news"
+    },
+    "kind": "youtube#searchResult",
+    "etag": "6aXAjtQA5cp0Dfb2nZAKVXtEV64",
+    "id": {
+      "kind": "youtube#video",
+      "videoId": "-c8LoR84Xjs"
+    },
+    "snippet": {
+      "publishedAt": "2020-07-15T08:27:20Z",
+      "channelId": "UCEXGDNclvmg6RW0vipJYsTQ",
+      "title": "Channels Television Live",
+      "description": "SUBSCRIBE to our YouTube channel for more videos: https://www.youtube.com/channelstelevision Follow us on Twitter: ...",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/-c8LoR84Xjs/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/-c8LoR84Xjs/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/-c8LoR84Xjs/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Channels Television",
+      "liveBroadcastContent": "live",
+      "publishTime": "2020-07-15T08:27:20Z"
+    }
+  },
+  {
+    "custom_metadata": {
+      "lang": "en",
+      "region": "us",
+      "type": "finance"
+    },
+    "kind": "youtube#searchResult",
+    "etag": "17MjffC-nhc1f0UkQ6HqNMG0dDY",
+    "id": {
+      "kind": "youtube#video",
+      "videoId": "dp8PhLsUcFE"
+    },
+    "snippet": {
+      "publishedAt": "2018-11-06T18:55:47Z",
+      "channelId": "UCUMZ7gohGI9HcU9VNsr2FJQ",
+      "title": "Bloomberg Global Financial News LIVE",
+      "description": "Bloomberg Global News brings you live coverage of the markets open and close, plus everything you need to know across ...",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/dp8PhLsUcFE/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/dp8PhLsUcFE/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/dp8PhLsUcFE/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Bloomberg Quicktake: Originals",
+      "liveBroadcastContent": "live",
+      "publishTime": "2018-11-06T18:55:47Z"
+    }
+  },
+  {
+    "custom_metadata": {
+      "lang": "en",
+      "region": "us",
+      "type": "news"
+    },
+    "kind": "youtube#searchResult",
+    "etag": "ZkrIV2bIzXBrv4X4LBTRDHudt_U",
+    "id": {
+      "kind": "youtube#video",
+      "videoId": "DxmDPrfinXY"
+    },
+    "snippet": {
+      "publishedAt": "2022-04-25T13:10:28Z",
+      "channelId": "UChirEOpgFCupRAk5etXqPaA",
+      "title": "Bloomberg Quicktake: Now 24/7 Live Breaking News",
+      "description": "Bloomberg Quicktake: Now brings you 24/7 live global news with minute-by-minute coverage of the day's top stories and original ...",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/DxmDPrfinXY/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/DxmDPrfinXY/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/DxmDPrfinXY/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Bloomberg Quicktake: Now",
+      "liveBroadcastContent": "live",
+      "publishTime": "2022-04-25T13:10:28Z"
+    }
+  },
+  {
+    "custom_metadata": {
+      "lang": "en",
+      "region": "us",
+      "type": "news"
+    },
+    "kind": "youtube#searchResult",
+    "etag": "Kr0YgFuIBhy-5IH9XAsJpesWUE4",
+    "id": {
+      "kind": "youtube#video",
+      "videoId": "VRZDyw7V26o"
+    },
+    "snippet": {
+      "publishedAt": "2021-08-24T16:23:28Z",
+      "channelId": "UCU1Pp4a-TwbrB40ja-4JG_Q",
+      "title": "Bloomberg Quicktake LIVE: News, Documentaries and More",
+      "description": "Bloomberg Quicktake brings you 24/7 live global news with minute-by-minute coverage of the day's top stories and original shows ...",
+      "thumbnails": {
+        "default": {
+          "url": "https://i.ytimg.com/vi/VRZDyw7V26o/default_live.jpg",
+          "width": 120,
+          "height": 90
+        },
+        "medium": {
+          "url": "https://i.ytimg.com/vi/VRZDyw7V26o/mqdefault_live.jpg",
+          "width": 320,
+          "height": 180
+        },
+        "high": {
+          "url": "https://i.ytimg.com/vi/VRZDyw7V26o/hqdefault_live.jpg",
+          "width": 480,
+          "height": 360
+        }
+      },
+      "channelTitle": "Bloomberg Quicktake: Explained",
+      "liveBroadcastContent": "live",
+      "publishTime": "2021-08-24T16:23:28Z"
     }
   }
 ]
