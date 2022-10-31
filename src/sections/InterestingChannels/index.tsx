@@ -9,7 +9,7 @@ const InterestingChannels: React.FC = () => {
   useEffect(() => {
     setLoading(true);
     setChannelAliases([]);
-    fetch(`configs/interesting_channels.json?v1`)
+    fetch(`configs/interesting_channels.json?v2`)
       .then((response) => response.json())
       .then((data: Array<{ channel_id: string }>) =>
         data.map((d) => d.channel_id)
