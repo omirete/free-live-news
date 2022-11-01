@@ -1,16 +1,36 @@
 [
-  { "channel_id": "NatGeo" },
-  { "channel_id": "SkyNews" },
-  { "channel_id": "rtvenoticias" },
-  { "channel_id": "Vox" },
-  { "channel_id": "todonoticias" },
-  { "channel_id": "LaNacionMas" },
-  { "channel_id": "aljazeeraenglish" },
-  { "channel_id": "cronicatv" },
-  { "channel_id": "dwdeutsch" },
-  { "channel_id": "NBCNews" },
-  { "channel_id": "dwnews" },
-  { "channel_id": "euronewses" },
-  { "channel_id": "euronews" },
-  { "channel_id": "TVPublicaArgentina" }
+  { "id": "UCpVm7bg6pXKo1Pr6k5kxG9A", "alias": "NatGeo", "is_user": false },
+  { "id": "UCoMdktPbSTixAyNGwb-UYkQ", "alias": "SkyNews", "is_user": false },
+  {
+    "id": "UC7QZIf0dta-XPXsp9Hv4dTw",
+    "alias": "rtvenoticias",
+    "is_user": false
+  },
+  { "id": "UCLXo7UDZvByw2ixzpQCufnA", "alias": "Vox", "is_user": false },
+  {
+    "id": "UCj6PcyLvpnIRT_2W_mwa9Aw",
+    "alias": "todonoticias",
+    "is_user": false
+  },
+  {
+    "id": "UCba3hpU7EFBSk817y9qZkiA",
+    "alias": "LaNacionMas",
+    "is_user": false
+  },
+  {
+    "id": "UCNye-wNBqNL5ZzHSJj3l8Bg",
+    "alias": "aljazeeraenglish",
+    "is_user": false
+  },
+  { "id": "UCT7KFGv6s2a-rh2Jq8ZdM1g", "alias": "cronicatv", "is_user": false },
+  { "id": "UCMIgOXM2JEQ2Pv2d0_PVfcg", "alias": "dwdeutsch", "is_user": false },
+  { "id": "UCeY0bbntWzzVIaj2z3QigXg", "alias": "NBCNews", "is_user": false },
+  { "id": "UCknLrEdhRCp1aegoMqRaCZg", "alias": "dwnews", "is_user": false },
+  { "id": "UCyoGb3SMlTlB8CLGVH4c8Rw", "alias": "euronewses", "is_user": false },
+  { "id": "UCSrZ3UV4jOidv8ppoVuvW9Q", "alias": "euronews", "is_user": false },
+  {
+    "id": "UCs231K71Bnu5295_x0MB5Pg",
+    "alias": "TVPublicaArgentina",
+    "is_user": true
+  }
 ]
