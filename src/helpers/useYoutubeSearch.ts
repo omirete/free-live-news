@@ -1,5 +1,7 @@
 import { useCallback, useState } from "react";
 
+const MAX_SEARCH_RESULTS = 5;
+
 export interface YoutubeSearchParams {
   /**
    * The part parameter specifies a comma-separated list of one or more search resource properties that the API response will include. The part names that you can include in the parameter value are id and snippet. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a search result, the snippet property contains other properties that identify the result's title, description, and so forth. If you set part=snippet, the API response will also contain all of those nested properties.
@@ -113,50 +115,85 @@ export interface YoutubeSearchParams {
 
 export type YoutubeSearchFunction = (
   args: YoutubeSearchParams
-) => Promise<Array<GoogleApiYouTubeSearchResource>>;
+) => Promise<GoogleApiYouTubeSearchResource[]>;
+
+export type YoutubeLoadMoreFunction = () => Promise<
+  GoogleApiYouTubeSearchResource[]
+>;
 
 export interface UseYoutubeSearch {
   loading: boolean;
-  searchResults: Array<GoogleApiYouTubeSearchResource>;
+  loadingMore: boolean;
+  searchResults: GoogleApiYouTubeSearchResource[];
+  endReached: boolean;
   search: YoutubeSearchFunction;
+  loadMore: YoutubeLoadMoreFunction;
 }
 
 const useYoutubeSearch = (key: string): UseYoutubeSearch => {
   const [loading, setLoading] = useState(false);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [searchResults, setSearchResults] = useState<
     Array<GoogleApiYouTubeSearchResource>
   >([]);
+  const [nextPageToken, setNextPageToken] = useState<string | undefined>();
+  const [endReached, setEndReached] = useState(false);
+  const [searchArgs, setSearchArgs] = useState<YoutubeSearchParams>({
+    part: "snippet",
+  });
 
-  const search = useCallback(
-    async (
-      args: YoutubeSearchParams
-    ): Promise<Array<GoogleApiYouTubeSearchResource>> => {
+  const search: YoutubeSearchFunction = useCallback(
+    async (args) => {
       setLoading(true);
-      const options: RequestInit = {
-        method: "GET",
-      };
-      const params = new URLSearchParams();
-      Object.keys(args).forEach((key) => {
-        const value: string = args[key as keyof YoutubeSearchParams] as string;
-        params.append(key, value);
-      });
-      params.set("key", key);
-      const response = await fetch(
-        `https://www.googleapis.com/youtube/v3/search?${params.toString()}`,
-        options
-      );
-      const data = await response.json();
-      setSearchResults(data.items);
+      setSearchResults([]);
+      setNextPageToken(undefined);
+      setSearchArgs(args);
+      const items = await loadMore();
       setLoading(false);
-      return data.items;
+      return items;
     },
     [key]
   );
 
+  const loadMore: YoutubeLoadMoreFunction = useCallback(async () => {
+    setLoadingMore(true);
+    const options: RequestInit = {
+      method: "GET",
+    };
+    const params = new URLSearchParams();
+    Object.keys(searchArgs).forEach((key) => {
+      const value: string = searchArgs[
+        key as keyof YoutubeSearchParams
+      ] as string;
+      params.append(key, value);
+    });
+    params.set("key", key);
+    params.set("maxResults", `${MAX_SEARCH_RESULTS}`);
+    if (nextPageToken) params.set("nextPageToken", nextPageToken);
+    const response = await fetch(
+      `https://www.googleapis.com/youtube/v3/search?${params.toString()}`,
+      options
+    );
+    const data = await response.json();
+    setSearchResults((prev) => [...prev, ...data.items]);
+    if ("nextPageToken" in data) {
+      setNextPageToken(data.nextPageToken);
+      setEndReached(false);
+    } else {
+      setNextPageToken(undefined);
+      setEndReached(true);
+    }
+    setLoadingMore(false);
+    return data.items;
+  }, [nextPageToken, searchArgs]);
+
   return {
     loading,
     searchResults,
+    endReached,
     search,
+    loadMore,
+    loadingMore,
   };
 };
 
