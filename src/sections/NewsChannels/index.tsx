@@ -8,7 +8,13 @@ const NewsChannels: React.FC = () => {
   return (
     <Container>
       <Filters filterState={filterState} setFilter={setFilter} />
-      <SearchResults loading={loading} searchResults={filteredData} />
+      <SearchResults
+        loading={loading}
+        searchResults={filteredData}
+        loadingMore={false}
+        endReached={true}
+        loadMore={async () => []}
+      />
     </Container>
   );
 };
