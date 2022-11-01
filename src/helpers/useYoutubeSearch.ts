@@ -1,5 +1,7 @@
 import { useCallback, useState } from "react";
 
+const MAX_SEARCH_RESULTS = 5;
+
 export interface YoutubeSearchParams {
   /**
    * The part parameter specifies a comma-separated list of one or more search resource properties that the API response will include. The part names that you can include in the parameter value are id and snippet. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a search result, the snippet property contains other properties that identify the result's title, description, and so forth. If you set part=snippet, the API response will also contain all of those nested properties.
@@ -110,53 +112,127 @@ export interface YoutubeSearchParams {
    */
   videoType?: string | undefined;
 }
+export interface YoutubeAPIErrorResponse {
+  error: {
+    code: number;
+    message: string;
+    errors: Array<{
+      message: string;
+      domain: string;
+      reason: string;
+    }>;
+  };
+}
 
 export type YoutubeSearchFunction = (
   args: YoutubeSearchParams
-) => Promise<Array<GoogleApiYouTubeSearchResource>>;
+) => Promise<GoogleApiYouTubeSearchResource[]>;
+
+export type YoutubeLoadMoreFunction = () => Promise<
+  GoogleApiYouTubeSearchResource[]
+>;
 
 export interface UseYoutubeSearch {
   loading: boolean;
-  searchResults: Array<GoogleApiYouTubeSearchResource>;
+  loadingMore: boolean;
+  searchResults: GoogleApiYouTubeSearchResource[];
+  endReached: boolean;
   search: YoutubeSearchFunction;
+  loadMore: YoutubeLoadMoreFunction;
 }
 
-const useYoutubeSearch = (key: string): UseYoutubeSearch => {
+const useYoutubeSearch = (API_KEY: string): UseYoutubeSearch => {
   const [loading, setLoading] = useState(false);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [searchResults, setSearchResults] = useState<
     Array<GoogleApiYouTubeSearchResource>
   >([]);
+  const [nextPageToken, setNextPageToken] = useState<string | undefined>();
+  const [searchArgs, setSearchArgs] = useState<YoutubeSearchParams>({
+    part: "snippet",
+  });
 
-  const search = useCallback(
+  const getSearchResults = useCallback(
     async (
-      args: YoutubeSearchParams
-    ): Promise<Array<GoogleApiYouTubeSearchResource>> => {
-      setLoading(true);
-      const options: RequestInit = {
-        method: "GET",
-      };
+      args: YoutubeSearchParams,
+      pageToken?: string
+    ): Promise<
+      GoogleApiYouTubePaginationInfo<GoogleApiYouTubeSearchResource>
+    > => {
+      // Setup search params ---------------------------------------------------
       const params = new URLSearchParams();
-      Object.keys(args).forEach((key) => {
-        const value: string = args[key as keyof YoutubeSearchParams] as string;
-        params.append(key, value);
+      Object.keys(args).forEach((argKey) => {
+        const value: string = args[
+          argKey as keyof YoutubeSearchParams
+        ] as string;
+        params.append(argKey, value);
       });
-      params.set("key", key);
+      params.set("key", API_KEY);
+      params.set("maxResults", `${MAX_SEARCH_RESULTS}`);
+      if (pageToken) params.set("pageToken", pageToken);
+      // -----------------------------------------------------------------------
+
       const response = await fetch(
         `https://www.googleapis.com/youtube/v3/search?${params.toString()}`,
-        options
+        { method: "GET" }
       );
-      const data = await response.json();
-      setSearchResults(data.items);
-      setLoading(false);
-      return data.items;
+      if (response.status === 200) {
+        const data: GoogleApiYouTubePaginationInfo<GoogleApiYouTubeSearchResource> =
+          await response.json();
+        return data;
+      } else {
+        const err: YoutubeAPIErrorResponse = await response.json();
+        alert(err.error.message);
+        return {
+          etag: "",
+          kind: "",
+          pageInfo: { resultsPerPage: 0, totalResults: 0 },
+          items: [],
+          prevPageToken: "",
+          nextPageToken: "",
+        };
+      }
     },
-    [key]
+    [API_KEY, MAX_SEARCH_RESULTS]
   );
+
+  const search: YoutubeSearchFunction = useCallback(
+    async (args) => {
+      setLoading(true);
+      setSearchArgs(args);
+      const results = await getSearchResults(args);
+      if (results.nextPageToken) {
+        setNextPageToken(results.nextPageToken);
+      } else {
+        setNextPageToken(undefined);
+      }
+      setSearchResults(results.items);
+      setLoading(false);
+      return results.items;
+    },
+    [getSearchResults]
+  );
+
+  const loadMore: YoutubeLoadMoreFunction = useCallback(async () => {
+    setLoadingMore(true);
+    const results = await getSearchResults(searchArgs, nextPageToken);
+    if (results.nextPageToken) {
+      setNextPageToken(results.nextPageToken);
+    } else {
+      setNextPageToken(undefined);
+    }
+    setSearchResults((prev) => [...prev, ...results.items]);
+    setLoadingMore(false);
+    return results.items;
+  }, [getSearchResults, nextPageToken, searchArgs]);
 
   return {
     loading,
     searchResults,
+    endReached: nextPageToken === undefined,
     search,
+    loadMore,
+    loadingMore,
   };
 };
 

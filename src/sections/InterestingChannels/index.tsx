@@ -2,20 +2,22 @@ import { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import charStringToNumber from "../../helpers/charStringToNumber";
 
+interface ChannelInfo {
+  alias: string;
+  id: string;
+  is_user: boolean;
+}
+
 const InterestingChannels: React.FC = () => {
   const [loading, setLoading] = useState(false);
-  const [channelAliases, setChannelAliases] = useState<Array<string>>([]);
+  const [channelsInfo, setChannelsInfo] = useState<ChannelInfo[]>([]);
 
   useEffect(() => {
     setLoading(true);
-    setChannelAliases([]);
-    fetch(`configs/interesting_channels.json?v1`)
+    fetch(`configs/interesting_channels.json?v3`)
       .then((response) => response.json())
-      .then((data: Array<{ channel_id: string }>) =>
-        data.map((d) => d.channel_id)
-      )
-      .then((channel_ids) => {
-        setChannelAliases(channel_ids);
+      .then((data: ChannelInfo[]) => {
+        setChannelsInfo(data);
       })
       .finally(() => setLoading(false));
   }, []);
@@ -23,11 +25,13 @@ const InterestingChannels: React.FC = () => {
   return (
     <Container className="mt-3 d-flex flex-wrap">
       {!loading &&
-        channelAliases.map((alias, i) => (
+        channelsInfo.map((channelInfo, i) => (
           <div key={i} className="m-1">
             <a
               key={i}
-              href={`https://www.youtube.com/c/${alias}`}
+              href={`https://www.youtube.com/${
+                channelInfo.is_user ? "user" : "c"
+              }/${channelInfo.alias}`}
               target="_blank"
               rel="noreferrer"
               className={`
@@ -36,11 +40,11 @@ const InterestingChannels: React.FC = () => {
             `}
               style={{
                 backgroundColor: `hsl(${
-                  charStringToNumber(alias) % 360
+                  charStringToNumber(channelInfo.id) % 360
                 }, 100%, 80%)`,
               }}
             >
-              {alias}
+              {channelInfo.alias}
             </a>
           </div>
         ))}

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export interface NavbarState {
   expanded: boolean;
@@ -22,11 +22,12 @@ const navLinks: NavLinkInfo[] = [
 const MyNavbar: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>("");
   const location = useLocation();
+  const navigate = useNavigate();
   useEffect(() => {
     setActiveSection(location.pathname); // contains initial '/'
   }, [location]);
   return (
-    <Navbar bg="light" variant="light" expand="md">
+    <Navbar bg="light" variant="light" expand="md" collapseOnSelect={true}>
       <Container>
         <Navbar.Brand>
           <Link to="/" className="text-decoration-none text-dark">
@@ -42,28 +43,29 @@ const MyNavbar: React.FC = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: "100px" }}
-            navbarScroll
-          >
+          <Nav className="me-auto my-2 my-lg-0" navbarScroll>
             {navLinks.map((nl, i) => {
               const isActive = activeSection === nl.link;
               return (
-                <Link
+                <Nav.Link
                   key={i}
-                  to={nl.link}
+                  href={nl.link}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate(nl.link);
+                  }}
+                  data-bs-toggle="collapse"
                   className={`
-                    nav-link
-                    ${
-                      isActive
-                        ? "active border-bottom border-warning border-2"
-                        : ""
-                    }
-                `}
+                  nav-link
+                  ${
+                    isActive
+                      ? "active border-bottom border-warning border-2"
+                      : ""
+                  }
+                    `}
                 >
                   {nl.text}
-                </Link>
+                </Nav.Link>
               );
             })}
           </Nav>

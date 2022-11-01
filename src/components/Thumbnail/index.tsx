@@ -1,4 +1,8 @@
-export interface VideoInfo {
+export interface VideoInfo
+  extends React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+  > {
   url: string;
   title: string;
   channelTitle: string;
@@ -16,9 +20,10 @@ const Thumbnail: React.FC<VideoInfo> = ({
   channelUrl,
   channelTitle,
   publishedAt,
+  className,
 }) => {
   return (
-    <div className="col-12 col-sm-6 col-md-4 col-lg-3 p-1">
+    <div className={`col-12 col-sm-6 col-md-4 col-lg-3 ${className}`}>
       <div className="card">
         <a href={url} target="_blank" rel="noreferrer">
           <img src={thumbnailUrl} className="card-img-top" alt={description} />
