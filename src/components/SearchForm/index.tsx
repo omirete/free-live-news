@@ -9,7 +9,7 @@ const SearchForm: React.FC<
     "searchResults" | "endReached" | "loadMore" | "loadingMore"
   >
 > = ({ search, loading }) => {
-  const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const q = form.elements.namedItem("q") as HTMLInputElement;
@@ -19,7 +19,7 @@ const SearchForm: React.FC<
       eventType: "live",
       q: q.value,
     };
-    search(params);
+    await search(params);
   };
   return (
     <div className="mt-3 p-2 rounded border shadow-sm">

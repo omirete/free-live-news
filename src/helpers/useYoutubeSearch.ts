@@ -112,6 +112,17 @@ export interface YoutubeSearchParams {
    */
   videoType?: string | undefined;
 }
+export interface YoutubeAPIErrorResponse {
+  error: {
+    code: number;
+    message: string;
+    errors: Array<{
+      message: string;
+      domain: string;
+      reason: string;
+    }>;
+  };
+}
 
 export type YoutubeSearchFunction = (
   args: YoutubeSearchParams
@@ -130,67 +141,95 @@ export interface UseYoutubeSearch {
   loadMore: YoutubeLoadMoreFunction;
 }
 
-const useYoutubeSearch = (key: string): UseYoutubeSearch => {
+const useYoutubeSearch = (API_KEY: string): UseYoutubeSearch => {
   const [loading, setLoading] = useState(false);
   const [loadingMore, setLoadingMore] = useState(false);
   const [searchResults, setSearchResults] = useState<
     Array<GoogleApiYouTubeSearchResource>
   >([]);
   const [nextPageToken, setNextPageToken] = useState<string | undefined>();
-  const [endReached, setEndReached] = useState(false);
   const [searchArgs, setSearchArgs] = useState<YoutubeSearchParams>({
     part: "snippet",
   });
 
+  const getSearchResults = useCallback(
+    async (
+      args: YoutubeSearchParams,
+      pageToken?: string
+    ): Promise<
+      GoogleApiYouTubePaginationInfo<GoogleApiYouTubeSearchResource>
+    > => {
+      // Setup search params ---------------------------------------------------
+      const params = new URLSearchParams();
+      Object.keys(args).forEach((argKey) => {
+        const value: string = args[
+          argKey as keyof YoutubeSearchParams
+        ] as string;
+        params.append(argKey, value);
+      });
+      params.set("key", API_KEY);
+      params.set("maxResults", `${MAX_SEARCH_RESULTS}`);
+      if (pageToken) params.set("pageToken", pageToken);
+      // -----------------------------------------------------------------------
+
+      const response = await fetch(
+        `https://www.googleapis.com/youtube/v3/search?${params.toString()}`,
+        { method: "GET" }
+      );
+      if (response.status === 200) {
+        const data: GoogleApiYouTubePaginationInfo<GoogleApiYouTubeSearchResource> =
+          await response.json();
+        return data;
+      } else {
+        const err: YoutubeAPIErrorResponse = await response.json();
+        alert(err.error.message);
+        return {
+          etag: "",
+          kind: "",
+          pageInfo: { resultsPerPage: 0, totalResults: 0 },
+          items: [],
+          prevPageToken: "",
+          nextPageToken: "",
+        };
+      }
+    },
+    [API_KEY, MAX_SEARCH_RESULTS]
+  );
+
   const search: YoutubeSearchFunction = useCallback(
     async (args) => {
       setLoading(true);
-      setSearchResults([]);
-      setNextPageToken(undefined);
       setSearchArgs(args);
-      const items = await loadMore();
+      const results = await getSearchResults(args);
+      if (results.nextPageToken) {
+        setNextPageToken(results.nextPageToken);
+      } else {
+        setNextPageToken(undefined);
+      }
+      setSearchResults(results.items);
       setLoading(false);
-      return items;
+      return results.items;
     },
-    [key]
+    [getSearchResults]
   );
 
   const loadMore: YoutubeLoadMoreFunction = useCallback(async () => {
     setLoadingMore(true);
-    const options: RequestInit = {
-      method: "GET",
-    };
-    const params = new URLSearchParams();
-    Object.keys(searchArgs).forEach((key) => {
-      const value: string = searchArgs[
-        key as keyof YoutubeSearchParams
-      ] as string;
-      params.append(key, value);
-    });
-    params.set("key", key);
-    params.set("maxResults", `${MAX_SEARCH_RESULTS}`);
-    if (nextPageToken) params.set("nextPageToken", nextPageToken);
-    const response = await fetch(
-      `https://www.googleapis.com/youtube/v3/search?${params.toString()}`,
-      options
-    );
-    const data = await response.json();
-    setSearchResults((prev) => [...prev, ...data.items]);
-    if ("nextPageToken" in data) {
-      setNextPageToken(data.nextPageToken);
-      setEndReached(false);
+    const results = await getSearchResults(searchArgs, nextPageToken);
+    if (results.nextPageToken) {
+      setNextPageToken(results.nextPageToken);
     } else {
       setNextPageToken(undefined);
-      setEndReached(true);
     }
+    setSearchResults((prev) => [...prev, ...results.items]);
     setLoadingMore(false);
-    return data.items;
-  }, [nextPageToken, searchArgs]);
+    return results.items;
+  }, [getSearchResults, nextPageToken, searchArgs]);
 
   return {
     loading,
     searchResults,
-    endReached,
+    endReached: nextPageToken === undefined,
     search,
     loadMore,
     loadingMore,

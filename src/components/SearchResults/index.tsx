@@ -37,7 +37,9 @@ const SearchResults: React.FC<Omit<UseYoutubeSearch, "search">> = ({
         )}
         {!loading && !endReached && searchResults.length > 0 && (
           <Button
-            onClick={loadMore}
+            onClick={async () => {
+              await loadMore();
+            }}
             className="w-100 mt-1"
             variant="outline-primary"
             disabled={loadingMore}
