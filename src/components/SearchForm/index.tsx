@@ -3,11 +3,13 @@ import {
   YoutubeSearchParams,
 } from "../../helpers/useYoutubeSearch";
 
-const SearchForm: React.FC<Omit<UseYoutubeSearch, "searchResults">> = ({
-  search,
-  loading,
-}) => {
-  const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
+const SearchForm: React.FC<
+  Omit<
+    UseYoutubeSearch,
+    "searchResults" | "endReached" | "loadMore" | "loadingMore"
+  >
+> = ({ search, loading }) => {
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const q = form.elements.namedItem("q") as HTMLInputElement;
@@ -17,10 +19,10 @@ const SearchForm: React.FC<Omit<UseYoutubeSearch, "searchResults">> = ({
       eventType: "live",
       q: q.value,
     };
-    search(params);
+    await search(params);
   };
   return (
-    <div className="mx-3 my-4 p-2 rounded border shadow-sm">
+    <div className="mt-3 p-2 rounded border shadow-sm">
       <form onSubmit={handleSubmit}>
         <div className="input-group">
           <input
