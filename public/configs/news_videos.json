@@ -45,36 +45,36 @@
       "type": "news"
     },
     "kind": "youtube#searchResult",
-    "etag": "IV5evzSlxRppSpnksa6UigA3WaY",
+    "etag": "fDK2oqhcDR0tUf6ApqaWRVnZd6E",
     "id": {
       "kind": "youtube#video",
-      "videoId": "GE_SfNVNyqk"
+      "videoId": "TR11P2b9DKc"
     },
     "snippet": {
-      "publishedAt": "2022-04-28T06:31:14Z",
+      "publishedAt": "2022-04-28T06:25:15Z",
       "channelId": "UCknLrEdhRCp1aegoMqRaCZg",
       "title": "DW News livestream | Headline news from around the world",
       "description": "DW News goes deep beneath the surface, providing the key stories from Europe and around the world. Exciting reports and ...",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/GE_SfNVNyqk/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/TR11P2b9DKc/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/GE_SfNVNyqk/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/TR11P2b9DKc/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/GE_SfNVNyqk/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/TR11P2b9DKc/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       },
       "channelTitle": "DW News",
       "liveBroadcastContent": "live",
-      "publishTime": "2022-04-28T06:31:14Z"
+      "publishTime": "2022-04-28T06:25:15Z"
     }
   },
   {
@@ -123,36 +123,36 @@
       "type": "news"
     },
     "kind": "youtube#searchResult",
-    "etag": "qjpf6NPWkP-9TLgLe2Nym6ZWwbQ",
+    "etag": "UKQFdpNPYoxQIlla-TTjVUw7Fo0",
     "id": {
       "kind": "youtube#video",
-      "videoId": "f0b7swYdKho"
+      "videoId": "IOSVORAZnRY"
     },
     "snippet": {
-      "publishedAt": "2022-10-27T20:48:54Z",
+      "publishedAt": "2022-11-03T20:44:39Z",
       "channelId": "UCba3hpU7EFBSk817y9qZkiA",
       "title": "LN+ EN VIVO - Últimas noticias de la Argentina y el mundo",
       "description": "LN+ EN VIVO las 24 horas Suscribite a LA NACION: https://bit.ly/2GU7jVv Mirá más contenidos en: ...",
       "thumbnails": {
         "default": {
-          "url": "https://i.ytimg.com/vi/f0b7swYdKho/default_live.jpg",
+          "url": "https://i.ytimg.com/vi/IOSVORAZnRY/default_live.jpg",
           "width": 120,
           "height": 90
         },
         "medium": {
-          "url": "https://i.ytimg.com/vi/f0b7swYdKho/mqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/IOSVORAZnRY/mqdefault_live.jpg",
           "width": 320,
           "height": 180
         },
         "high": {
-          "url": "https://i.ytimg.com/vi/f0b7swYdKho/hqdefault_live.jpg",
+          "url": "https://i.ytimg.com/vi/IOSVORAZnRY/hqdefault_live.jpg",
           "width": 480,
           "height": 360
         }
       },
       "channelTitle": "LA NACION",
       "liveBroadcastContent": "live",
-      "publishTime": "2022-10-27T20:48:54Z"
+      "publishTime": "2022-11-03T20:44:39Z"
     }
   },
   {
