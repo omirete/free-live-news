@@ -1,36 +1,138 @@
 [
-  { "id": "UCpVm7bg6pXKo1Pr6k5kxG9A", "alias": "NatGeo", "is_user": false },
-  { "id": "UCoMdktPbSTixAyNGwb-UYkQ", "alias": "SkyNews", "is_user": false },
-  {
-    "id": "UC7QZIf0dta-XPXsp9Hv4dTw",
-    "alias": "rtvenoticias",
-    "is_user": false
-  },
-  { "id": "UCLXo7UDZvByw2ixzpQCufnA", "alias": "Vox", "is_user": false },
-  {
-    "id": "UCj6PcyLvpnIRT_2W_mwa9Aw",
-    "alias": "todonoticias",
-    "is_user": false
-  },
-  {
-    "id": "UCba3hpU7EFBSk817y9qZkiA",
-    "alias": "LaNacionMas",
-    "is_user": false
-  },
-  {
-    "id": "UCNye-wNBqNL5ZzHSJj3l8Bg",
-    "alias": "aljazeeraenglish",
-    "is_user": false
-  },
-  { "id": "UCT7KFGv6s2a-rh2Jq8ZdM1g", "alias": "cronicatv", "is_user": false },
-  { "id": "UCMIgOXM2JEQ2Pv2d0_PVfcg", "alias": "dwdeutsch", "is_user": false },
-  { "id": "UCeY0bbntWzzVIaj2z3QigXg", "alias": "NBCNews", "is_user": false },
-  { "id": "UCknLrEdhRCp1aegoMqRaCZg", "alias": "dwnews", "is_user": false },
-  { "id": "UCyoGb3SMlTlB8CLGVH4c8Rw", "alias": "euronewses", "is_user": false },
-  { "id": "UCSrZ3UV4jOidv8ppoVuvW9Q", "alias": "euronews", "is_user": false },
-  {
-    "id": "UCs231K71Bnu5295_x0MB5Pg",
-    "alias": "TVPublicaArgentina",
-    "is_user": true
-  }
+    {
+        "id": "UCpVm7bg6pXKo1Pr6k5kxG9A",
+        "alias": "NatGeo",
+        "is_user": false,
+        "type": "entertainment",
+        "lang": "en",
+        "region": "us"
+    },
+    {
+        "id": "UCoMdktPbSTixAyNGwb-UYkQ",
+        "alias": "SkyNews",
+        "is_user": false,
+        "type": "news",
+        "lang": "en",
+        "region": "uk"
+    },
+    {
+        "id": "UC7QZIf0dta-XPXsp9Hv4dTw",
+        "alias": "rtvenoticias",
+        "is_user": false,
+        "type": "news",
+        "lang": "es",
+        "region": "es"
+    },
+    {
+        "id": "UCLXo7UDZvByw2ixzpQCufnA",
+        "alias": "Vox",
+        "is_user": false,
+        "type": "entertainment",
+        "lang": "en",
+        "region": "us"
+    },
+    {
+        "id": "UCj6PcyLvpnIRT_2W_mwa9Aw",
+        "alias": "todonoticias",
+        "is_user": false,
+        "type": "news",
+        "lang": "es",
+        "region": "ar"
+    },
+    {
+        "id": "UCba3hpU7EFBSk817y9qZkiA",
+        "alias": "LaNacionMas",
+        "is_user": false,
+        "type": "news",
+        "lang": "es",
+        "region": "ar"
+    },
+    {
+        "id": "UCNye-wNBqNL5ZzHSJj3l8Bg",
+        "alias": "aljazeeraenglish",
+        "is_user": false,
+        "type": "news",
+        "lang": "en",
+        "region": "asia"
+    },
+    {
+        "id": "UCT7KFGv6s2a-rh2Jq8ZdM1g",
+        "alias": "cronicatv",
+        "is_user": false,
+        "type": "news",
+        "lang": "es",
+        "region": "ar"
+    },
+    {
+        "id": "UCMIgOXM2JEQ2Pv2d0_PVfcg",
+        "alias": "dwdeutsch",
+        "is_user": false,
+        "type": "news",
+        "lang": "de",
+        "region": "de"
+    },
+    {
+        "id": "UCeY0bbntWzzVIaj2z3QigXg",
+        "alias": "NBCNews",
+        "is_user": false,
+        "type": "news",
+        "lang": "en",
+        "region": "us"
+    },
+    {
+        "id": "UCknLrEdhRCp1aegoMqRaCZg",
+        "alias": "dwnews",
+        "is_user": false,
+        "type": "news",
+        "lang": "en",
+        "region": "de"
+    },
+    {
+        "id": "UCyoGb3SMlTlB8CLGVH4c8Rw",
+        "alias": "euronewses",
+        "is_user": false,
+        "type": "news",
+        "lang": "es",
+        "region": "eu"
+    },
+    {
+        "id": "UCSrZ3UV4jOidv8ppoVuvW9Q",
+        "alias": "euronews",
+        "is_user": false,
+        "type": "news",
+        "lang": "en",
+        "region": "eu"
+    },
+    {
+        "id": "UCCCPCZNChQdGa9EkATeye4g",
+        "alias": "FRANCE24",
+        "is_user": false,
+        "type": "news",
+        "lang": "fr",
+        "region": "fr"
+    },
+    {
+        "id": "UCUdOoVWuWmgo1wByzcsyKDQ",
+        "alias": "France24_es",
+        "is_user": false,
+        "type": "news",
+        "lang": "es",
+        "region": "fr"
+    },
+    {
+        "id": "UCQfwfsi5VrQ8yKZ-UWmAEFg",
+        "alias": "France24_en",
+        "is_user": false,
+        "type": "news",
+        "lang": "en",
+        "region": "fr"
+    },
+    {
+        "id": "UCs231K71Bnu5295_x0MB5Pg",
+        "alias": "TVPublicaArgentina",
+        "is_user": true,
+        "type": "news",
+        "lang": "es",
+        "region": "ar"
+    }
 ]
