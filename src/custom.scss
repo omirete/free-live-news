@@ -39,3 +39,22 @@
 @import "../node_modules/bootstrap/scss/utilities/api";
 
 // 8. Add additional custom code here
+$utilities: map-merge(
+  $utilities,
+  (
+    "background-color": map-merge(
+      map-get($utilities, "background-color"),
+      (
+        state: hover
+      ),
+    ),
+    "shadow": map-merge(
+      map-get($utilities, "shadow"),
+      (
+        state: hover
+      ),
+    ),
+  )
+);
+
+@import "bootstrap/scss/utilities/api";
