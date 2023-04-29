@@ -33,7 +33,7 @@ def get_live_videos_from_channel(api_key: str, channel_id: str, max_search_resul
         res.raise_for_status()
 
 
-def get_interesting_channels():
+def get_interesting_channels() -> dict:
     with open('public/configs/interesting_channels.json', 'r', encoding='utf-8') as f:
         return json.load(f)
 
@@ -62,11 +62,12 @@ def parseArgs() -> argparse.Namespace:
 def get_active_live_videos(api_key: str, debug: bool = False) -> list[dict]:
     channels = get_interesting_channels()
     videos = []
-    for i in range(len(channels)):
-        c = channels[i]
+    channel_ids = list(channels.keys())
+    for i in range(len(channel_ids)):
+        channel_id = channel_ids[i]
+        c = channels[channel_id]
         if debug:
             print(f"Working on channel: {c['alias']}")
-        channel_id = c["id"]
         channel_videos = get_live_videos_from_channel(
             api_key,
             channel_id
