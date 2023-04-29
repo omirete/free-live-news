@@ -1,138 +1,242 @@
-[
-    {
+{
+    "UCpVm7bg6pXKo1Pr6k5kxG9A": {
         "id": "UCpVm7bg6pXKo1Pr6k5kxG9A",
         "alias": "NatGeo",
         "is_user": false,
         "type": "entertainment",
         "lang": "en",
-        "region": "us"
+        "region": "us",
+        "iconUrl": "https://yt3.ggpht.com/13FpK4FfJb_I-aTMNRQTmaxLO2vjEi_NzWm1KxOzr-vjYLX7QmfHwn6XC3PfEf4Oay5WjP0CXw=s240-c-k-c0x00ffffff-no-rj",
+        "bannerUrl": "https://yt3.googleusercontent.com/fzxPtuCCOieaQeWcKntSXVtHHBMKhL4JTpPSza0Mbk0xdl7VS5AT8mOc6j3285c5GTg_fnbmmw",
+        "title": "National Geographic",
+        "description": "Inspiring people to care about the planet! National Geographic is the world's premium destination for science, exploration, and adventure. Through their world-class scientists, photographers, journalists, and filmmakers, Nat Geo gets you closer to the stories that matter and past the edge of what's possible.\n\n\n"
     },
-    {
+    "UCoMdktPbSTixAyNGwb-UYkQ": {
         "id": "UCoMdktPbSTixAyNGwb-UYkQ",
         "alias": "SkyNews",
         "is_user": false,
         "type": "news",
         "lang": "en",
-        "region": "uk"
+        "region": "uk",
+        "iconUrl": "https://yt3.ggpht.com/E96qzkAoX81DQs7wqRHR4rNk1esa4quBPzda2QRzImlhoHOVgRdAN8o-S0Rb_hpygo_n4LdhwTE=s240-c-k-c0x00ffffff-no-rj",
+        "bannerUrl": "https://yt3.googleusercontent.com/ADEnKLznQQwNmDcGBjL502JQ4pXmtx0MJ1jhwozAA1-Ze_yn8iTFjSvW1lBAKzsuQU3HLRHBOt0",
+        "title": "Sky News",
+        "description": "The best of Sky News video from the UK and around the world.\n\nSky News is now available in Spanish/Los video de Sky News están disponibles en español aquí: https://www.youtube.com/channel/UCzG5BnqHO8oNlrPDW9CYJog\n\nSky News videos are also available in German here/Hier können Sie außerdem Sky News-Videos auf Deutsch finden: https://www.youtube.com/channel/UCHYg31l2xrF-Bj859nsOfnA\n\nT.me/skyNews"
     },
-    {
+    "UC7QZIf0dta-XPXsp9Hv4dTw": {
         "id": "UC7QZIf0dta-XPXsp9Hv4dTw",
         "alias": "rtvenoticias",
         "is_user": false,
         "type": "news",
         "lang": "es",
-        "region": "es"
+        "region": "es",
+        "iconUrl": "https://yt3.ggpht.com/ytc/AGIKgqNE6heOUyE2xZfK9O13AIp9VWQt6dnr1M9VcDIkYA=s240-c-k-c0x00ffffff-no-rj",
+        "bannerUrl": "https://yt3.googleusercontent.com/5dj4rj401cSoLxKaozZprNDMIcgQBpMuDap494Lhv9xVqy8cWeNDV2eHU0LKbOQTINRoDcVL",
+        "title": "RTVE Noticias",
+        "description": "Bienvenido al canal oficial de RTVE Noticias en YouTube\n\nSi está interesado en la información global en español este es su lugar. Nuestro canal ofrece información de última hora de España y del resto mundo. Las noticias nacionales y mundiales más recientes, entrevistas exclusivas, cobertura de eventos en directo... Y con la mejor información internacional en español gracias a las 15 corresponsalías de RTVE desplegadas en todo el mundo.  La mejor forma de informarse con fuentes veraces y contrastadas para saber lo que ocurre día a día en nuestro mundo.\n\nVisite nuestra web https://www.rtve.es/noticias para disfrutar de más contenidos. Y descargue nuestra aplicación 'RTVE Noticias' para iPhone y Android. Puede seguir toda la información también a través de nuestros canales La 1, La 2 , Canal 24h y Teledeporte."
     },
-    {
+    "UCLXo7UDZvByw2ixzpQCufnA": {
         "id": "UCLXo7UDZvByw2ixzpQCufnA",
         "alias": "Vox",
         "is_user": false,
         "type": "entertainment",
         "lang": "en",
-        "region": "us"
+        "region": "us",
+        "iconUrl": "https://yt3.ggpht.com/ytc/AGIKgqM8rHWDu071t1WRxP7fThK1xi42GWsJEWFqRxyqnw=s240-c-k-c0x00ffffff-no-rj",
+        "bannerUrl": "https://yt3.googleusercontent.com/y4c_KyXDPmHL8g3stKP4woAXRNISIHnqJl2o8rxaq6TDlCALvnhw8GETk5-fe4etMR5haJ_J4g",
+        "title": "Vox",
+        "description": "Vox helps you cut through the noise and understand what's driving events in the headlines and in our lives.\n\nVox video is Mona Lalwani, Valerie Lapinski, Cath Spangler, Dion Lee, Joss Fong, Adam Freelander, Bridgett Henwood, Kim Mas, Coleman Lowndes, Christophe Haubursin, Sam Ellis, Ranjani Chakraborty, Liz Scheltens, Phil Edwards, Rajaa Elidrissi, Christina Thornell, Laura Bult, Ed Vega, Matt Dunne, Joey Sendaydiego, Melissa Hirsch, and Halley Brown with engagement support from Jayne A. Quan. \n\nIf you want to help Vox video create more ambitious explainers and series, become a member of the Vox Video Lab or support Vox with a contribution http://www.vox.com/contribute-now\n\nCheck out our FAQ on permissions and licensing of our videos: https://www.voxmedia.com/pages/licensing\n✉️ Write us: voxvideo@vox.com\n✉️ For questions about the Video Lab: videolab@voxmedia.com"
     },
-    {
+    "UCj6PcyLvpnIRT_2W_mwa9Aw": {
         "id": "UCj6PcyLvpnIRT_2W_mwa9Aw",
         "alias": "todonoticias",
         "is_user": false,
         "type": "news",
         "lang": "es",
-        "region": "ar"
+        "region": "ar",
+        "iconUrl": "https://yt3.ggpht.com/ytc/AGIKgqOhRqvh3tVmH0E3sgdKYPhXbk21u86m4o952LTOqg=s240-c-k-c0x00ffffff-no-rj",
+        "bannerUrl": "https://yt3.googleusercontent.com/GfrzxPREY4o3kmAdruWNpn4DrDRMPhsK6EbCdzlX_LQGrpA9yQxcIbWt7RLrBlTd3sGK0by7",
+        "title": "Todo Noticias",
+        "description": "El canal líder de noticias en la Argentina. Calidad e información las 24 horas."
     },
-    {
+    "UCba3hpU7EFBSk817y9qZkiA": {
         "id": "UCba3hpU7EFBSk817y9qZkiA",
         "alias": "LaNacionMas",
         "is_user": false,
         "type": "news",
         "lang": "es",
-        "region": "ar"
+        "region": "ar",
+        "iconUrl": "https://yt3.ggpht.com/ytc/AGIKgqOFAXPsjxp78yJr8i227WTv1bElh9x3t4DYUYFKuw=s240-c-k-c0x00ffffff-no-rj",
+        "bannerUrl": "https://yt3.googleusercontent.com/eb9rziJDGfAuOPMY1c_4XHbmbbpaksJfn9IrrQgIYmVwlX8EiYe5mXTZEKiOEA4Z3R7tBbow",
+        "title": "LA NACION",
+        "description": "Estás en YouTube, así que te seguimos. \nLA NACION: audiencias influyentes.\n"
     },
-    {
+    "UCNye-wNBqNL5ZzHSJj3l8Bg": {
         "id": "UCNye-wNBqNL5ZzHSJj3l8Bg",
         "alias": "aljazeeraenglish",
         "is_user": false,
         "type": "news",
         "lang": "en",
-        "region": "asia"
+        "region": "asia",
+        "iconUrl": "https://yt3.ggpht.com/YKrh5sIYpesEIHbjfgqwFjFx3ZgIjM_zak2z0LO8QENSgrmgKBes1m65POj9jkmzm0qoKwgl=s240-c-k-c0x00ffffff-no-rj",
+        "bannerUrl": "https://yt3.googleusercontent.com/5muwAfHp3_47XL_2hX3SszJiT1cbVOBwUjVMrhu_C-hCVWDqDzdkzEX5x_gLP93k-7RTdW6WBg",
+        "title": "Al Jazeera English",
+        "description": "#AlJazeeraEnglish, we focus on people and events that affect people's lives. We bring topics to light that often go under-reported, listening to all sides of the story and giving a 'voice to the voiceless.'\n\nReaching more than 282 million households in over 140 countries across the globe, our viewers trust #AlJazeeraEnglish to keep them informed, inspired, and entertained.\n\nOur impartial, fact-based reporting wins worldwide praise and respect. It is our unique brand of #journalism that the world has come to rely on.\n\nWe are reshaping global media and constantly working to strengthen our reputation as one of the world's most respected #news and #CurrentAffairs channels."
     },
-    {
+    "UCT7KFGv6s2a-rh2Jq8ZdM1g": {
         "id": "UCT7KFGv6s2a-rh2Jq8ZdM1g",
         "alias": "cronicatv",
         "is_user": false,
         "type": "news",
         "lang": "es",
-        "region": "ar"
+        "region": "ar",
+        "iconUrl": "https://yt3.ggpht.com/i213N_VQVyD9cIhh1zRP9OFW60ege6nchMkw4SzEiy6YznGacsKto8GKsFoye12LcV4pskI__w=s240-c-k-c0x00ffffff-no-rj",
+        "bannerUrl": "https://yt3.googleusercontent.com/b2Y0oCfHiX3qmLogiNCHIVlUPTy-jFZCY2936Lb26ilUKKiRTyUD4ZlzF4QHu8hXYS1eXJRJqg",
+        "title": "Crónica TV",
+        "description": "El canal número 1 de noticias de Argentina. Creador de un estilo informativo único con sus clásicas placas rojas, siempre firme junto al pueblo."
     },
-    {
+    "UCBi2mrWuNuyYy4gbM6fU18Q": {
+        "id": "UCBi2mrWuNuyYy4gbM6fU18Q",
+        "alias": "ABCNews",
+        "is_user": false,
+        "type": "news",
+        "lang": "en",
+        "region": "us",
+        "iconUrl": "https://yt3.ggpht.com/OOT0eq8LoW8V3PMURGYuk0kRSgRGP7EsuGZoODhHBcg1jCB1qkuIAxS-XGnjKX9Q6rf-WKTvkQ=s240-c-k-c0x00ffffff-no-rj",
+        "bannerUrl": "https://yt3.googleusercontent.com/kiYfCtIbRNiyiAPyUk_ZZ3IDoP1K_r23T8WAHTjDKjIgWUGR-CMlwdHgKgqZ7bg99jtHEwMH",
+        "title": "ABC News",
+        "description": "ABC News is your daily source for breaking national and world news, exclusive interviews and 24/7 live streaming coverage that will help you stay up to date on the events shaping our world. https://abcnews.go.com"
+    },
+    "UC1_E8NeF5QHY2dtdLRBCCLA": {
+        "id": "UC1_E8NeF5QHY2dtdLRBCCLA",
+        "alias": "africanews",
+        "is_user": false,
+        "type": "news",
+        "lang": "en",
+        "region": "africa",
+        "iconUrl": "https://yt3.ggpht.com/L8irqEmpi37buYveRShxDoYvBTtJs4UboF4yo7sPY86uzdIy_oJ06A3VsP-TGjzFpEewg_iV1Cw=s240-c-k-c0x00ffffff-no-rj",
+        "bannerUrl": "https://yt3.googleusercontent.com/BmzbRTtupU4MWlQRhEXvHtoQPEhrQoHvyEFeZWlXrlS2YGfMRUiFB5JDtdQGpyZJQpC59V5a",
+        "title": "africanews",
+        "description": "Africanews on YouTube brings you a daily dose of news, produced by Africans for Africans.\nAfricanews is the first pan-African multilingual media outlet, unique in its concept and vision.\nSubscribe on our Youtube channel https://www.youtube.com/c/africanews and receive all the latest news from the continent.\nAfricanews is available in English and French.\n\nFind out more here: http://africanews.com/\nFacebook : https://www.facebook.com/africanews.channel/\nTwitter : https://twitter.com/africanews"
+    },
+    "UCFxHplbcoJK9m70c4VyTIxg": {
+        "id": "UCFxHplbcoJK9m70c4VyTIxg",
+        "alias": "milenio",
+        "is_user": false,
+        "type": "news",
+        "lang": "es",
+        "region": "mx",
+        "iconUrl": "https://yt3.ggpht.com/ytc/AGIKgqPA6n2R3vBmB4yRLtq52QVpgYooMhlH5YiaoC1aiQ=s240-c-k-c0x00ffffff-no-rj",
+        "bannerUrl": "https://yt3.googleusercontent.com/0f8pq0u215_WFolNO2jkY_gUC0AjW_XJtn2mvU0AanZZTUo4hzE8dv3gZT318d4XeCT36fBH",
+        "title": "MILENIO",
+        "description": "Grupo Milenio - Multimedios trae para ti las noticias más importantes en México y el mundo. Noticias 24 horas, al momento,  tendencias, breaking news y lo más relevante de la política nacional e internacional."
+    },
+    "UCMIgOXM2JEQ2Pv2d0_PVfcg": {
         "id": "UCMIgOXM2JEQ2Pv2d0_PVfcg",
         "alias": "dwdeutsch",
         "is_user": false,
         "type": "news",
         "lang": "de",
-        "region": "de"
+        "region": "de",
+        "iconUrl": "https://yt3.ggpht.com/ytc/AGIKgqN4Aohi8iY4_yv6My3KCBjJEtLcG2Akyd2DcKB9GYU=s240-c-k-c0x00ffffff-no-rj",
+        "bannerUrl": "https://yt3.googleusercontent.com/e5EE1Y9-SCAQt5RazzHgiKt6lidPk7-_mqF3YhP9k92JzyxZxglIAgQMY7tPgCAAmODEIpOe-g",
+        "title": "DW Deutsch",
+        "description": "Das Live-Programm der Deutschen Welle bietet einen direkten Draht nach Deutschland und Europa mit 24 Stunden Programm in deutscher Sprache: Magazine und Reportagen aus Kunst und Kultur, Politik und Wirtschaft, Forschung und Wissenschaft.\n\nAuf DW Deutsch liefern wir in exklusiven Beiträgen und spannenden Gesprächen die Hintergründe zu den großen Themen des Tages, setzen sie in Kontext und analysieren sie. Unser weltweites Korrespondenten-Netzwerk ist unser direkter Draht, um sich unabhängig zu den global wichtigsten Themen unserer Zeit zu informieren: Freiheit und Menschenrechte, Demokratie und Rechtsstaat, Welthandel und soziale Gerechtigkeit, gesundheitliche Aufklärung und Umweltschutz, Kultur und Leben, Technologie und Innovation.\n\nAls unabhängiges, internationales Medienunternehmen aus Deutschland informieren wir Menschen weltweit, damit sie sich frei entscheiden können. DW - Freie Informationen für freie Entscheidungen.\n\n"
     },
-    {
+    "UCeY0bbntWzzVIaj2z3QigXg": {
         "id": "UCeY0bbntWzzVIaj2z3QigXg",
         "alias": "NBCNews",
         "is_user": false,
         "type": "news",
         "lang": "en",
-        "region": "us"
+        "region": "us",
+        "iconUrl": "https://yt3.ggpht.com/ytc/AGIKgqMy71pibr8qQnFlrFK1hq5U4BZQKVOSxOL49_IcWso=s240-c-k-c0x00ffffff-no-rj",
+        "bannerUrl": "https://yt3.googleusercontent.com/QADBbqgI_8NIheg_wQ8IIHdC4yLIpqVPy7yViIx4vrGYFC7IDl_GUjBa89-zCjslRKRimS1N",
+        "title": "NBC News",
+        "description": "NBC News Digital is a collection of innovative and powerful news brands that deliver compelling, diverse and engaging news stories. NBC News Digital features NBCNews.com, MSNBC.com, TODAY.com, Nightly News, Meet the Press, Dateline, and the existing apps and digital extensions of these respective properties.  We deliver the best in breaking news, live video coverage, original journalism and segments from your favorite NBC News Shows.\n\n\nConnect with NBC News:\nNBC News App: https://smart.link/5d0cd9df61b80\nBreaking News Alerts: https://link.nbcnews.com/join/5cj/breaking-news-signup?cid=sm_npd_nn_yt_bn-clip_190621\nVisit NBCNews.Com: http://nbcnews.to/ReadNBC\nFind NBC News on Facebook: http://nbcnews.to/LikeNBC\nFollow NBC News on Twitter: http://nbcnews.to/FollowNBC\nFollow NBC News on Instagram: http://nbcnews.to/InstaNBC"
     },
-    {
+    "UCknLrEdhRCp1aegoMqRaCZg": {
         "id": "UCknLrEdhRCp1aegoMqRaCZg",
         "alias": "dwnews",
         "is_user": false,
         "type": "news",
         "lang": "en",
-        "region": "de"
+        "region": "de",
+        "iconUrl": "https://yt3.ggpht.com/ytc/AGIKgqMiAkwjCNDMQ09AZ4BAaIg0djLTgB_3i0uUjgKPQOU=s240-c-k-c0x00ffffff-no-rj",
+        "bannerUrl": "https://yt3.googleusercontent.com/Vyi_YhngkZ9jUECFcEgdPMbKzMgvRfeNmX_WHbYkLw8UDNHwdSgg4sjGLVX4GUxRFHutVdnN",
+        "title": "DW News",
+        "description": "Journalism that’s Made for Minds. Follow us for global news and analysis from the heart of Europe. DW News delivers the world's breaking news while going deep beneath the surface of what's going on. Correspondents on the ground and in the studio provide their detailed analysis and insights on issues that affect our viewers. \n\nDeutsche Welle is Germany’s international broadcaster, producing content in 30 languages. We independently report social, political and economic developments in Germany and Europe, incorporating both German and other perspectives. DW hopes to promote understanding between different cultures and peoples. \n\nWhile funded by the German government, the work of DW is regulated by the Deutsche Welle Act (http://p.dw.com/p/17MtP), meaning content is always independent of government influence. \n\nWe ask that you please keep comments and discussions on this channel clean and respectful. For further information please click the 'DW Netiquette' link below."
     },
-    {
+    "UCyoGb3SMlTlB8CLGVH4c8Rw": {
         "id": "UCyoGb3SMlTlB8CLGVH4c8Rw",
         "alias": "euronewses",
         "is_user": false,
         "type": "news",
         "lang": "es",
-        "region": "eu"
+        "region": "eu",
+        "iconUrl": "https://yt3.ggpht.com/qFkd6lZgU09CvQP-6pJggpIlXwW4h0TLM8DvtHGTsOteRWmFYstP8OyypJvtOekV2bHXikxBRg=s240-c-k-c0x00ffffff-no-rj",
+        "bannerUrl": "https://yt3.googleusercontent.com/ReR0fnZSySg-G98PBvkX1TOOlWgC1XbviPiER3IBZGvvoX46oak7sb0qsQcnoLi8FEkkgppkRg",
+        "title": "euronews (en español)",
+        "description": "¡Bienvenido al canal oficial de Euronews en YouTube!  \n\nA todas horas, nuestro equipo de 500 periodistas de más de 30 nacionalidades diferentes reúne noticias con una perspectiva imparcial, más allá de los contenidos de los titulares y las voces de toda Europa y el mundo. Nuestro canal de YouTube tiene todo esto y más, ofreciendo contenidos seleccionados y originales de la principal fuente de noticias internacionales de Europa.\n\nNuestra misión es capacitar a la gente para que se forme su propia opinión. Confiamos en la inteligencia y la capacidad de las personas para decidir por sí mismas y tratamos de ofrecer a nuestra audiencia la mayor diversidad de puntos de vista a través de un periodismo inexcusablemente imparcial.\n\nEuronews nació de la voluntad de crear un fuerte canal de noticias europeo independiente. Como único medio de comunicación internacional con una perspectiva europea, Euronews es el lugar al que el mundo acude para escuchar lo que Europa tiene que decir.\n\nSíguenos en:"
     },
-    {
+    "UCSrZ3UV4jOidv8ppoVuvW9Q": {
         "id": "UCSrZ3UV4jOidv8ppoVuvW9Q",
         "alias": "euronews",
         "is_user": false,
         "type": "news",
         "lang": "en",
-        "region": "eu"
+        "region": "eu",
+        "iconUrl": "https://yt3.ggpht.com/t3slq37NYJRuP2UoEZDoPKyMClKyQULG8-j2DEfzL1XXcBvFpR6z6HD7rtc0wDn8Mqt0OtpU=s240-c-k-c0x00ffffff-no-rj",
+        "bannerUrl": "https://yt3.googleusercontent.com/dc4Xf1RX7wD5vXZ7oDwy8pjbwX2QiDy_aVsx0iIzjxvksf4E4ZCdzjbBoZfGjwFP9wk7HqWo6DQ",
+        "title": "euronews",
+        "description": "Welcome to the official Euronews YouTube channel!\n\nAround the clock, our team of 500 journalists of more than 30 different nationalities gathers news with impartial perspective, beyond the headlines content and voices from across Europe and the world. Our YouTube channel has all this and more, bringing you selected and original content from the world's most trusted news source.\n\nOur mission is to empower people to form their own opinion. We trust in people’s intelligence and ability to make up their own mind and seek to provide our audience with the greatest diversity of viewpoints through journalism that is unapologetically impartial. We don’t trade in bias and outrage, we focus on facts, ideas, and solutions. We believe all views matter.\n\nEuronews was born out of a will to create a strong independent European news channel in 1993. As the only international news media with a European perspective, Euronews is where the world turns to hear what Europe has to say.\n\nCheck us out on ⬇️"
     },
-    {
+    "UCCCPCZNChQdGa9EkATeye4g": {
         "id": "UCCCPCZNChQdGa9EkATeye4g",
         "alias": "FRANCE24",
         "is_user": false,
         "type": "news",
         "lang": "fr",
-        "region": "fr"
+        "region": "fr",
+        "iconUrl": "https://yt3.ggpht.com/ytc/AGIKgqMKSXZrNZje6psD47Xbkj3KRqiiTHRjufyCZvMUEQ=s240-c-k-c0x00ffffff-no-rj",
+        "bannerUrl": "https://lh3.googleusercontent.com/tgKgh68MWH_mtWapiK2eLVACwhMu0LyE4xRe9DYxtxwFIDUafeAwU5XsOAmBmTTvoMsTyg5oug",
+        "title": "FRANCE 24",
+        "description": "Page YouTube officielle de FRANCE 24, votre chaîne d'information internationale 24h/24h.\nAbonnez-vous : https://f24.my/YouTube\nRegardez les vidéos sur l'information internationale aux 4 coins du monde !"
     },
-    {
+    "UCUdOoVWuWmgo1wByzcsyKDQ": {
         "id": "UCUdOoVWuWmgo1wByzcsyKDQ",
         "alias": "France24_es",
         "is_user": false,
         "type": "news",
         "lang": "es",
-        "region": "fr"
+        "region": "fr",
+        "iconUrl": "https://yt3.ggpht.com/ytc/AGIKgqMKQB8hn6HfzIFy37sQ534U0U2BcRxqYm3EPh8m=s240-c-k-c0x00ffffff-no-rj",
+        "bannerUrl": "https://lh3.googleusercontent.com/ZkijfFNoGOhde_JBzZzo0_jpSgu_XyOmyCjD_-kBUTnGUwZy3_XxD4XI9JnGTyniLCpt24_kVQ",
+        "title": "FRANCE 24 Español",
+        "description": ""
     },
-    {
+    "UCQfwfsi5VrQ8yKZ-UWmAEFg": {
         "id": "UCQfwfsi5VrQ8yKZ-UWmAEFg",
         "alias": "France24_en",
         "is_user": false,
         "type": "news",
         "lang": "en",
-        "region": "fr"
+        "region": "fr",
+        "iconUrl": "https://yt3.ggpht.com/ytc/AGIKgqNNrxL3Bam46oeoN-tJlZBWkunod2b7AUNRasWbrA=s240-c-k-c0x00ffffff-no-rj",
+        "bannerUrl": "https://lh3.googleusercontent.com/8AGGB7c2Lit5FLhOWhLntH6jSb_au6_eZ20rIjttbkyzEGS0y8IWtU5MjnXahPL1X3jqyPK_",
+        "title": "FRANCE 24 English",
+        "description": "Official FRANCE 24's YouTube channel, international news 24/7.\nWatch international video news from around the world !"
     },
-    {
+    "UCs231K71Bnu5295_x0MB5Pg": {
         "id": "UCs231K71Bnu5295_x0MB5Pg",
         "alias": "TVPublicaArgentina",
         "is_user": true,
         "type": "news",
         "lang": "es",
-        "region": "ar"
+        "region": "ar",
+        "iconUrl": "https://yt3.ggpht.com/5lHbUMHAepSNrhSsVMYkzfXNud-xXia5KHM9BP7iN-tK5ZHmyazhWcjL_r9RNgNQSkukolI_QA=s240-c-k-c0x00ffffff-no-rj",
+        "bannerUrl": "https://yt3.googleusercontent.com/Qv9WNzKBf9XdCgE_1muSJ9QocotVMo1tv5-4F9RBRWfuXA1rXsynTj_0SF2vfi28lD-w0-4hDVs",
+        "title": "Televisión Pública",
+        "description": "Televisión Pública Argentina ofrece fragmentos de sus programas, basados en criterios de calidad y equilibrio entre información, formación y entretenimiento.\n\nTV Pública Argentina -Argentine national public television- , offers segments of their programmes, based on criteria of quality and balance of information, education and entertainment."
     }
-]
+}

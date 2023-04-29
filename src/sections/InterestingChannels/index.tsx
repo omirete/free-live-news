@@ -1,55 +1,72 @@
 import { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
-import charStringToNumber from "../../helpers/charStringToNumber";
 
 interface ChannelInfo {
-  alias: string;
-  id: string;
-  is_user: boolean;
+    alias: string;
+    id: string;
+    is_user: boolean;
+    type: string;
+    lang: string;
+    region: string;
+    iconUrl?: string;
+    bannerUrl?: string;
+    title: string;
+    description: string;
 }
 
 const InterestingChannels: React.FC = () => {
-  const [loading, setLoading] = useState(false);
-  const [channelsInfo, setChannelsInfo] = useState<ChannelInfo[]>([]);
+    const [loading, setLoading] = useState(false);
+    const [channelsInfo, setChannelsInfo] = useState<ChannelInfo[]>([]);
 
-  useEffect(() => {
-    setLoading(true);
-    fetch(`configs/interesting_channels.json?v3`)
-      .then((response) => response.json())
-      .then((data: ChannelInfo[]) => {
-        setChannelsInfo(data);
-      })
-      .finally(() => setLoading(false));
-  }, []);
+    useEffect(() => {
+        setLoading(true);
+        fetch(`configs/interesting_channels.json?v5`)
+            .then((response) => response.json())
+            .then((data: Record<string, ChannelInfo>) => {
+                setChannelsInfo(Object.values(data));
+            })
+            .finally(() => setLoading(false));
+    }, []);
 
-  return (
-    <Container className="mt-3 d-flex flex-wrap">
-      {!loading &&
-        channelsInfo.map((channelInfo, i) => (
-          <div key={i} className="m-1">
-            <a
-              key={i}
-              href={`https://www.youtube.com/${
-                channelInfo.is_user ? "user" : "c"
-              }/${channelInfo.alias}`}
-              target="_blank"
-              rel="noreferrer"
-              className={`
-                text-decoration-none py-3 px-4
-                btn
-            `}
-              style={{
-                backgroundColor: `hsl(${
-                  charStringToNumber(channelInfo.id) % 360
-                }, 100%, 80%)`,
-              }}
-            >
-              {channelInfo.alias}
-            </a>
-          </div>
-        ))}
-    </Container>
-  );
+    return (
+        <Container className="mt-3 d-flex flex-wrap">
+            {!loading &&
+                channelsInfo.map((channelInfo, i) => (
+                    <div key={i} className="m-2">
+                        <a
+                            className="card p-2 text-decoration-none text-dark bg-light-hover shadow-sm-hover"
+                            href={`https://www.youtube.com/${
+                                channelInfo.is_user ? "user" : "c"
+                            }/${channelInfo.alias}`}
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <div className="d-flex align-items-center">
+                                <div className="image">
+                                    <img
+                                        src={channelInfo.iconUrl}
+                                        className="rounded"
+                                        width="50"
+                                        height="50"
+                                    />
+                                </div>
+
+                                <div className="ms-2 w-100">
+                                    <h4 className="mb-0 mt-0">
+                                        {channelInfo.title}
+                                    </h4>
+                                    <span>
+                                        {channelInfo.type} |{" "}
+                                        {channelInfo.region} ({channelInfo.lang}
+                                        )
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                ))}
+        </Container>
+    );
 };
 
 export default InterestingChannels;
