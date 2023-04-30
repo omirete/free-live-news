@@ -1,0 +1,23 @@
+name: Update videos list and channel icons
+
+on:
+  schedule:
+  # Runs every day at 01:12.
+  - cron: "13 1 * * *"
+
+jobs:
+  # Single job, post the tweet.
+  post_tweet:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.11"
+    - name: Install requirements
+      run: pip install -r python_requirements.txt
+    - name: Update videos list
+      run: python3 automations\update_news_videos_list.py -k "${{ secrets.VITE_GOOGLEAPIS_YT_API_KEY }}" --ftp_host "${{ secrets.ftp_server }}" -u "${{ secrets.ftp_username }}" -p "${{ secrets.ftp_password }}"
+    - name: Update channel icons
+      run: python3 automations\update_channel_icons.py -k "${{ secrets.VITE_GOOGLEAPIS_YT_API_KEY }}" --ftp_host "${{ secrets.ftp_server }}" -u "${{ secrets.ftp_username }}" -p "${{ secrets.ftp_password }}"
