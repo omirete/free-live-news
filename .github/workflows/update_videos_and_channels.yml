@@ -7,7 +7,7 @@ on:
 
 jobs:
   # Single job, post the tweet.
-  post_tweet:
+  Update videos:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
