@@ -17,6 +17,6 @@ jobs:
     - name: Install requirements
       run: pip install -r python_requirements.txt
     - name: Update videos list
-      run: python3 automations\update_news_videos_list.py -k "${{ secrets.VITE_GOOGLEAPIS_YT_API_KEY }}" --ftp_host "${{ secrets.ftp_server }}" -u "${{ secrets.ftp_username }}" -p "${{ secrets.ftp_password }}"
+      run: python3 automations/update_news_videos_list.py -k "${{ secrets.VITE_GOOGLEAPIS_YT_API_KEY }}" --ftp_host "${{ secrets.ftp_server }}" -u "${{ secrets.ftp_username }}" -p "${{ secrets.ftp_password }}"
     - name: Update channel icons
-      run: python3 automations\update_channel_icons.py -k "${{ secrets.VITE_GOOGLEAPIS_YT_API_KEY }}" --ftp_host "${{ secrets.ftp_server }}" -u "${{ secrets.ftp_username }}" -p "${{ secrets.ftp_password }}"
+      run: python3 automations/update_channel_icons.py -k "${{ secrets.VITE_GOOGLEAPIS_YT_API_KEY }}" --ftp_host "${{ secrets.ftp_server }}" -u "${{ secrets.ftp_username }}" -p "${{ secrets.ftp_password }}"
