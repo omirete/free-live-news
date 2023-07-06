@@ -4,7 +4,7 @@ on:
   schedule:
   # Runs every day at 01:12.
   - cron: "13 1 * * *"
-
+  workflow_dispatch:
 jobs:
   update-videos-and-channels:
     runs-on: ubuntu-latest
