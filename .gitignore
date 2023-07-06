@@ -25,3 +25,6 @@ dist-ssr
 
 # Other
 .env
+client_secret.json
+yt_token.json
+__pycache__
