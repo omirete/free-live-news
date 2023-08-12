@@ -20,7 +20,7 @@ const InterestingChannels: React.FC = () => {
 
     useEffect(() => {
         setLoading(true);
-        fetch(`configs/interesting_channels.json?v5`)
+        fetch(`${import.meta.env.VITE_BASE_URL_FOR_CONFIGS}/configs/interesting_channels.json?${import.meta.env.VITE_CONFIGS_VERSION}`)
             .then((response) => response.json())
             .then((data: Record<string, ChannelInfo>) => {
                 setChannelsInfo(Object.values(data));

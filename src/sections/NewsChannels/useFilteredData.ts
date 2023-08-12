@@ -38,7 +38,7 @@ const useFilteredData = (): UseFilteredDataReturn => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`configs/news_videos.json?v1`)
+    fetch(`${import.meta.env.VITE_BASE_URL_FOR_CONFIGS}/configs/news_videos.json?${import.meta.env.VITE_CONFIGS_VERSION}`)
       .then((response) => response.json())
       .then((data: YoutubeResultWithCustomMetadata[]) => setAllData(data))
       .then(() => setLoading(false));

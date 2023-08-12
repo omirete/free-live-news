@@ -1,10 +1,11 @@
 import json
 import argparse
+from paramiko import SFTPClient
 import requests
 from time import sleep
-from ftputil import FTPHost
-from ftputil.error import FTPIOError
 from requests_oauthlib import OAuth2Session, TokenUpdated
+
+from helpers import get_sftp_client
 
 
 def parseArgs() -> argparse.Namespace:
@@ -14,9 +15,10 @@ def parseArgs() -> argparse.Namespace:
         epilog='For questions, reach out to the developer (GitHub user: /omirete).')
 
     parser.add_argument('-k', '--api_key', required=True)
-    parser.add_argument('--ftp_host', required=True)
-    parser.add_argument('-u', '--ftp_usr', required=False)
-    parser.add_argument('-p', '--ftp_pwd', required=False)
+    parser.add_argument('--ssh_host', required=True)
+    parser.add_argument('-u', '--ssh_usr', required=False)
+    parser.add_argument('-p', '--ssh_pwd', required=False)
+    parser.add_argument('-b', '--ssh_base_dir', required=False)
     parser.add_argument('-yp', '--yt_playlist_id', required=True)
     parser.add_argument('-yt', '--yt_token', required=True)
     parser.add_argument('-yrt', '--yt_refresh_token', required=True)
@@ -27,22 +29,22 @@ def parseArgs() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def get_live_videos(ftp: FTPHost, debug: bool = False) -> list[dict]:
+def get_live_videos(sftp: SFTPClient, debug: bool = False) -> list[dict]:
     # Get videos that went inactive since we last checked ----------------------
     try:
-        with ftp.open(f'freelivenews.rocks/configs/news_videos.json', 'r', encoding='utf-8') as f:
+        with sftp.open(f'freelivenews.rocks/configs/news_videos.json', 'r', encoding='utf-8') as f:
             return json.load(f)
-    except FTPIOError:
+    except FileNotFoundError:
         return []
     # --------------------------------------------------------------------------
 
 
-def get_inactive_videos(ftp: FTPHost, debug: bool = False) -> list[dict]:
+def get_inactive_videos(sftp: SFTPClient, debug: bool = False) -> list[dict]:
     # Get videos that went inactive since we last checked ----------------------
     try:
-        with ftp.open(f'freelivenews.rocks/configs/inactive_videos.json', 'r', encoding='utf-8') as f:
+        with sftp.open(f'freelivenews.rocks/configs/inactive_videos.json', 'r', encoding='utf-8') as f:
             return json.load(f)
-    except FTPIOError:
+    except FileNotFoundError:
         return []
     # --------------------------------------------------------------------------
 
@@ -142,10 +144,10 @@ def remove_videos_from_playlist(client: OAuth2Session, api_key: str, yt_token: s
                 sleep(2)
 
 
-def main(client: OAuth2Session, api_key: str, yt_token: str, yt_playlist_id: str, ftp_host: str, ftp_usr: str = None, ftp_pwd: str = None, debug: bool = False):
-    with FTPHost(ftp_host, ftp_usr, ftp_pwd) as ftp:
+def main(client: OAuth2Session, api_key: str, yt_token: str, yt_playlist_id: str, ssh_host: str, ssh_usr: str = None, ssh_pwd: str = None, ssh_base_dir: str = '.', debug: bool = False):
+    with get_sftp_client(ssh_host, ssh_usr, ssh_pwd, ssh_base_dir) as sftp:
         print("Getting active videos...")
-        videos = get_live_videos(ftp, debug)
+        videos = get_live_videos(sftp, debug)
         # inactive_videos = get_inactive_videos(ftp, debug)
         print("Getting current videos in playlist...")
         playlist_items = get_playlist_items(api_key, yt_playlist_id)
@@ -198,4 +200,4 @@ if __name__ == "__main__":
         )
 
     main(client, args.api_key, args.yt_token, args.yt_playlist_id,
-         args.ftp_host, args.ftp_usr, args.ftp_pwd, args.debug)
+         args.ssh_host, args.ssh_usr, args.ssh_pwd, args.ssh_base_dir, args.debug)

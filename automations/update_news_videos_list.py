@@ -3,11 +3,11 @@ import argparse
 from typing import Literal
 import requests
 from time import sleep
-from ftputil import FTPHost
-from ftputil.error import FTPIOError
+from paramiko import SFTPClient
+from helpers import sftp_path_exists, get_sftp_client
 
 
-def get_live_videos_from_channel(api_key: str, channel_id: str, max_search_results: int = 10) -> list[dict]:
+def get_live_videos_from_channel(api_key: str, channel_id: str, max_search_results: int = 10, debug: bool = False) -> list[dict]:
 
     # Setup search params ------------------------------------------------------
     params = {
@@ -25,6 +25,9 @@ def get_live_videos_from_channel(api_key: str, channel_id: str, max_search_resul
     base_endpoint = "https://www.googleapis.com/youtube/v3/search"
 
     res = requests.get(base_endpoint, params)
+    if debug == True:
+        print(res.text)
+        print(res.json())
     if res.status_code == 200:
         results = res.json()
         items = results["items"]
@@ -38,22 +41,25 @@ def get_interesting_channels() -> dict:
         return json.load(f)
 
 
-def save_videos_list(videos: list[dict], ftp: FTPHost, type: Literal["active", "inactive"] = "active"):
+def save_videos_list(videos: list[dict], sftp: SFTPClient, type: Literal["active", "inactive"] = "active"):
     filename = "news_videos.json" if type == "active" else "inactive_videos.json"
-    with ftp.open(f'freelivenews.rocks/configs/{filename}', 'w', encoding='utf-8') as f:
+    if sftp_path_exists(sftp, 'configs') == False:
+        sftp.mkdir('configs')
+    with sftp.open(f'configs/{filename}', 'w') as f:
         json.dump(videos, f, ensure_ascii=False)
 
 
 def parseArgs() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         prog='Free live news: Update list of videos',
-        description="Finds all active news videos and saves the result to an FTP directory.",
+        description="Finds all active news videos and saves the result to an SFTP directory.",
         epilog='For questions, reach out to the developer (GitHub user: /omirete).')
 
     parser.add_argument('-k', '--api_key', required=True)
-    parser.add_argument('--ftp_host', required=True)
-    parser.add_argument('-u', '--ftp_usr', required=False)
-    parser.add_argument('-p', '--ftp_pwd', required=False)
+    parser.add_argument('--ssh_host', required=True)
+    parser.add_argument('-u', '--ssh_usr', required=False)
+    parser.add_argument('-p', '--ssh_pwd', required=False)
+    parser.add_argument('-b', '--ssh_base_dir', required=False)
     parser.add_argument('-d', '--debug', required=False, action='store_true')
 
     return parser.parse_args()
@@ -70,7 +76,8 @@ def get_active_live_videos(api_key: str, debug: bool = False) -> list[dict]:
             print(f"Working on channel: {c['alias']}")
         channel_videos = get_live_videos_from_channel(
             api_key,
-            channel_id
+            channel_id,
+            debug=debug
         )
         for v in channel_videos:
             v["custom_metadata"] = {
@@ -85,25 +92,25 @@ def get_active_live_videos(api_key: str, debug: bool = False) -> list[dict]:
     return videos
 
 
-def get_inactive_live_videos(active_videos: list[dict], ftp: FTPHost, debug: bool = False) -> list[dict]:
+def get_inactive_live_videos(active_videos: list[dict], sftp: SFTPClient, debug: bool = False) -> list[dict]:
     active_videos_ids = [v["id"] for v in active_videos]
 
     # Get videos that went inactive since we last checked ----------------------
     try:
-        with ftp.open(f'freelivenews.rocks/configs/news_videos.json', 'r', encoding='utf-8') as f:
+        with sftp.open(f'configs/news_videos.json', 'r') as f:
             previously_active_videos: list[dict] = json.load(f)
-    except FTPIOError:
-            previously_active_videos: list[dict] = []
+    except FileNotFoundError:
+        previously_active_videos: list[dict] = []
     newly_inactive_videos = [
         v for v in previously_active_videos if v["id"] not in active_videos_ids]
     # --------------------------------------------------------------------------
 
     # Add those videos to the full list of inactive ones -----------------------
     try:
-        with ftp.open(f'freelivenews.rocks/configs/inactive_videos.json', 'r', encoding='utf-8') as f:
+        with sftp.open(f'configs/inactive_videos.json', 'r') as f:
             inactive_videos: list[dict] = json.load(f)
-    except FTPIOError:
-            inactive_videos: list[dict] = []
+    except FileNotFoundError:
+        inactive_videos: list[dict] = []
     inactive_videos.extend(newly_inactive_videos)
     # --------------------------------------------------------------------------
 
@@ -115,14 +122,15 @@ def get_inactive_live_videos(active_videos: list[dict], ftp: FTPHost, debug: boo
     return inactive_videos
 
 
-def main(api_key: str, ftp_host: str, ftp_usr: str = None, ftp_pwd: str = None, debug: bool = False):
+def main(api_key: str, ssh_host: str, ssh_usr: str = None, ssh_pwd: str = None, ssh_base_dir: str = '.', debug: bool = False):
     videos = get_active_live_videos(api_key, debug)
-    with FTPHost(ftp_host, ftp_usr, ftp_pwd) as ftp:
-        inactive_videos = get_inactive_live_videos(videos, ftp, debug)
-        save_videos_list(videos, ftp, 'active')
-        save_videos_list(inactive_videos, ftp, 'inactive')
+    with get_sftp_client(ssh_host, ssh_usr, ssh_pwd, ssh_base_dir) as sftp:
+        inactive_videos = get_inactive_live_videos(videos, sftp, debug)
+        save_videos_list(videos, sftp, 'active')
+        save_videos_list(inactive_videos, sftp, 'inactive')
 
 
 if __name__ == "__main__":
     args = parseArgs()
-    main(args.api_key, args.ftp_host, args.ftp_usr, args.ftp_pwd, args.debug)
+    main(args.api_key, args.ssh_host, args.ssh_usr,
+         args.ssh_pwd, args.ssh_base_dir, args.debug)
