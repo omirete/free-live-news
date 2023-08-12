@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
 
 interface ChannelInfo {
     alias: string;
@@ -29,7 +28,7 @@ const InterestingChannels: React.FC = () => {
     }, []);
 
     return (
-        <Container className="mt-3 d-flex flex-wrap">
+        <div className="mt-3 d-flex flex-wrap container">
             {!loading &&
                 channelsInfo.map((channelInfo, i) => (
                     <div key={i} className="m-2">
@@ -65,7 +64,7 @@ const InterestingChannels: React.FC = () => {
                         </a>
                     </div>
                 ))}
-        </Container>
+        </div>
     );
 };
 

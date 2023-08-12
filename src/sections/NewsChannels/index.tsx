@@ -1,4 +1,3 @@
-import { Container } from "react-bootstrap";
 import SearchResults from "../../components/SearchResults";
 import Filters from "./Filters";
 import useFilteredData from "./useFilteredData";
@@ -6,7 +5,7 @@ import useFilteredData from "./useFilteredData";
 const NewsChannels: React.FC = () => {
   const { filteredData, loading, filterState, setFilter } = useFilteredData();
   return (
-    <Container>
+    <div className="container">
       <Filters filterState={filterState} setFilter={setFilter} />
       <SearchResults
         loading={loading}
@@ -15,7 +14,7 @@ const NewsChannels: React.FC = () => {
         endReached={true}
         loadMore={async () => []}
       />
-    </Container>
+    </div>
   );
 };
 

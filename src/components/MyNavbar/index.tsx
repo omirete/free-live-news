@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export interface NavbarState {
@@ -28,7 +28,7 @@ const MyNavbar: React.FC = () => {
   }, [location]);
   return (
     <Navbar bg="light" variant="light" expand="md" collapseOnSelect={true}>
-      <Container>
+      <div className="container">
         <Navbar.Brand>
           <Link to="/" className="text-decoration-none text-dark">
             <img
@@ -70,7 +70,7 @@ const MyNavbar: React.FC = () => {
             })}
           </Nav>
         </Navbar.Collapse>
-      </Container>
+      </div>
     </Navbar>
   );
 };

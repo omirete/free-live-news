@@ -1,4 +1,3 @@
-import { Button } from "react-bootstrap";
 import { UseYoutubeSearch } from "../../helpers/useYoutubeSearch";
 import Thumbnail, { VideoInfo } from "../Thumbnail";
 
@@ -36,16 +35,15 @@ const SearchResults: React.FC<Omit<UseYoutubeSearch, "search">> = ({
           <p className="m-0">End reached.</p>
         )}
         {!loading && !endReached && searchResults.length > 0 && (
-          <Button
+          <button
             onClick={async () => {
               await loadMore();
             }}
-            className="w-100 mt-1"
-            variant="outline-primary"
+            className="w-100 mt-1 btn btn-outline-primary"
             disabled={loadingMore}
           >
             {!loadingMore ? "Load more" : "Loading..."}
-          </Button>
+          </button>
         )}
       </div>
     </div>
