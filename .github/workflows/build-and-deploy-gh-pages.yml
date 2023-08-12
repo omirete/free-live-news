@@ -30,7 +30,9 @@ jobs:
         npm install
         npm run build
       env:
-          VITE_GOOGLEAPIS_YT_API_KEY: ${{ secrets.VITE_GOOGLEAPIS_YT_API_KEY }}
+        VITE_GOOGLEAPIS_YT_API_KEY: ${{ secrets.VITE_GOOGLEAPIS_YT_API_KEY }}
+        VITE_BASE_URL_FOR_CONFIGS: ${{ secrets.VITE_BASE_URL_FOR_CONFIGS }}
+        VITE_CONFIGS_VERSION: ${{ secrets.VITE_CONFIGS_VERSION }}
     - name: Setup Pages
       uses: actions/configure-pages@v3
     - name: Upload artifact
