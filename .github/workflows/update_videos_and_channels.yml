@@ -17,6 +17,6 @@ jobs:
     - name: Install requirements
       run: pip install -r python_requirements.txt
     - name: Update videos list
-      run: python3 automations/update_news_videos_list.py -k ${{ secrets.PRIVATE_YT_API_KEY }} --ssh_host ${{ secrets.ssh_server }} -u ${{ secrets.ssh_username }} -p ${{ secrets.ssh_password }} -b ${{ secrets.ssh_base_dir}}
+      run: python3 automations/update_news_videos_list.py -k ${{ secrets.PRIVATE_YT_API_KEY }} --ssh_host ${{ secrets.SSH_HOST }} -u ${{ secrets.SSH_USR }} -p ${{ secrets.SSH_PWD }} -b ${{ secrets.SSH_BASE_DIR}}
     - name: Update channel icons
-      run: python3 automations/update_channel_icons.py -k ${{ secrets.PRIVATE_YT_API_KEY }} --ssh_host ${{ secrets.ssh_server }} -u ${{ secrets.ssh_username }} -p ${{ secrets.ssh_password }} -b ${{ secrets.ssh_base_dir}}
+      run: python3 automations/update_channel_icons.py -k ${{ secrets.PRIVATE_YT_API_KEY }} --ssh_host ${{ secrets.SSH_HOST }} -u ${{ secrets.SSH_USR }} -p ${{ secrets.SSH_PWD }} -b ${{ secrets.SSH_BASE_DIR}}
