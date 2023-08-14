@@ -7,17 +7,20 @@ from datetime import datetime
 from paramiko import AutoAddPolicy, SFTPClient, SSHClient
 
 
-def get_sftp_client(ssh_host: str, ssh_usr: str, ssh_pwd: str = None, ssh_base_dir: str = '.') -> SFTPClient:
-    with SSHClient() as ssh:
-        ssh.set_missing_host_key_policy(AutoAddPolicy())
-        ssh.connect(
-            hostname=ssh_host,
-            username=ssh_usr,
-            password=ssh_pwd,
-        )
-        with ssh.open_sftp() as sftp:
-            sftp.chdir(ssh_base_dir)
-            return sftp
+def get_ssh_client(ssh_host: str, ssh_usr: str, ssh_pwd: str = None) -> SSHClient:
+    ssh = SSHClient()
+    ssh.set_missing_host_key_policy(AutoAddPolicy())
+    ssh.connect(
+        hostname=ssh_host,
+        username=ssh_usr,
+        password=ssh_pwd,
+    )
+    return ssh
+
+def get_sftp_client(ssh: SSHClient, ssh_base_dir: str = '.') -> SFTPClient:
+    sftp = ssh.open_sftp()
+    sftp.chdir(ssh_base_dir)
+    return sftp
 
 
 def sftp_path_exists(sftp: SFTPClient, path: str) -> bool:
@@ -148,10 +151,13 @@ def get_inactive_live_videos(active_videos: list[dict], sftp: SFTPClient, debug:
 
 def main(api_key: str, ssh_host: str, ssh_usr: str = None, ssh_pwd: str = None, ssh_base_dir: str = '.', debug: bool = False):
     videos = get_active_live_videos(api_key, debug)
-    with get_sftp_client(ssh_host, ssh_usr, ssh_pwd, ssh_base_dir) as sftp:
-        inactive_videos = get_inactive_live_videos(videos, sftp, debug)
-        save_videos_list(videos, sftp, 'active')
-        save_videos_list(inactive_videos, sftp, 'inactive')
+    ssh = get_ssh_client(ssh_host, ssh_usr, ssh_pwd)
+    with ssh:
+        sftp = get_sftp_client(ssh, ssh_base_dir)
+        with sftp:
+            inactive_videos = get_inactive_live_videos(videos, sftp, debug)
+            save_videos_list(videos, sftp, 'active')
+            save_videos_list(inactive_videos, sftp, 'inactive')
 
 
 if __name__ == "__main__":
