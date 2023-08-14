@@ -3,6 +3,7 @@ import argparse
 from typing import Literal
 import requests
 from time import sleep
+from datetime import datetime
 from paramiko import AutoAddPolicy, SFTPClient, SSHClient
 
 
@@ -131,6 +132,9 @@ def get_inactive_live_videos(active_videos: list[dict], sftp: SFTPClient, debug:
             inactive_videos: list[dict] = json.load(f)
     except FileNotFoundError:
         inactive_videos: list[dict] = []
+    finally:
+        for v in inactive_videos:
+            v["inactivity_date"] = datetime.now().isoformat()
     inactive_videos.extend(newly_inactive_videos)
     # --------------------------------------------------------------------------
 
