@@ -16,6 +16,7 @@ def get_sftp_client(ssh_host: str, ssh_usr: str, ssh_pwd: str = None, ssh_base_d
         )
         with ssh.open_sftp() as sftp:
             sftp.chdir(ssh_base_dir)
+            return sftp
 
 
 def sftp_path_exists(sftp: SFTPClient, path: str) -> bool:
