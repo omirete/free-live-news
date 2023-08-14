@@ -1,11 +1,21 @@
 import json
 import argparse
-from paramiko import SFTPClient
+from paramiko import AutoAddPolicy, SFTPClient, SSHClient
 import requests
 from time import sleep
 from requests_oauthlib import OAuth2Session, TokenUpdated
 
-from helpers import get_sftp_client
+
+def get_sftp_client(ssh_host: str, ssh_usr: str, ssh_pwd: str = None, ssh_base_dir: str = '.') -> SFTPClient:
+    with SSHClient() as ssh:
+        ssh.set_missing_host_key_policy(AutoAddPolicy())
+        ssh.connect(
+            hostname=ssh_host,
+            username=ssh_usr,
+            password=ssh_pwd,
+        )
+        with ssh.open_sftp() as sftp:
+            sftp.chdir(ssh_base_dir)
 
 
 def parseArgs() -> argparse.Namespace:
