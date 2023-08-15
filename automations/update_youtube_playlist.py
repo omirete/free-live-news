@@ -216,5 +216,13 @@ if __name__ == "__main__":
             }
         )
 
-    main(client, args.api_key, args.yt_token, args.yt_playlist_id,
-         args.ssh_host, args.ssh_usr, args.ssh_pwd, args.ssh_base_dir, args.debug)
+    main(
+        client=client,
+        api_key=args.api_key,
+        yt_token=args.yt_token,
+        yt_playlist_id=args.yt_playlist_id,
+        ssh_host=args.ssh_host,
+        ssh_usr=args.ssh_usr,
+        ssh_pwd=args.ssh_pwd,
+        ssh_base_dir=args.ssh_base_dir,
+        debug=args.debug)
