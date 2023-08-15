@@ -1,0 +1,20 @@
+name: Update YouTube playlist
+
+on:
+  schedule:
+  # Runs every day at 01:12.
+  - cron: "13 2 * * *"
+  workflow_dispatch:
+jobs:
+  update-yt-playlist:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.11"
+    - name: Install requirements
+      run: pip install -r python_requirements.txt
+    - name: Update YouTube playlist
+      run: python3 automations/update_youtube_playlist.py -k ${{ secrets.PRIVATE_YT_API_KEY }} --ssh_host ${{ secrets.SSH_HOST }} -u ${{ secrets.SSH_USR }} -p ${{ secrets.SSH_PWD }} -b ${{ secrets.SSH_BASE_DIR}} --yt_playlist_id ${{ secrets.YOUTUBE_PLAYLIST_ID }} --yt_token ${{ secrets.YT_ACCESS_TOKEN }} --yt_refresh_token ${{ secrets.YT_REFRESH_TOKEN }} --yt_client_id ${{ secrets.YT_CLIENT_ID }} --yt_client_secret ${{ secrets.YT_CLIENT_SECRET }}
