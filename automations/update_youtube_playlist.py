@@ -46,7 +46,7 @@ def parseArgs() -> argparse.Namespace:
 def get_live_videos(sftp: SFTPClient, debug: bool = False) -> list[dict]:
     # Get videos that went inactive since we last checked ----------------------
     try:
-        with sftp.open(f'freelivenews.rocks/configs/news_videos.json', 'r', encoding='utf-8') as f:
+        with sftp.open(f'freelivenews.rocks/configs/news_videos.json', 'r') as f:
             return json.load(f)
     except FileNotFoundError:
         return []
@@ -56,7 +56,7 @@ def get_live_videos(sftp: SFTPClient, debug: bool = False) -> list[dict]:
 def get_inactive_videos(sftp: SFTPClient, debug: bool = False) -> list[dict]:
     # Get videos that went inactive since we last checked ----------------------
     try:
-        with sftp.open(f'freelivenews.rocks/configs/inactive_videos.json', 'r', encoding='utf-8') as f:
+        with sftp.open(f'freelivenews.rocks/configs/inactive_videos.json', 'r') as f:
             return json.load(f)
     except FileNotFoundError:
         return []
