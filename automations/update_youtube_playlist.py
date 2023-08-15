@@ -16,6 +16,7 @@ def get_ssh_client(ssh_host: str, ssh_usr: str, ssh_pwd: str = None) -> SSHClien
     )
     return ssh
 
+
 def get_sftp_client(ssh: SSHClient, ssh_base_dir: str = '.') -> SFTPClient:
     sftp = ssh.open_sftp()
     sftp.chdir(ssh_base_dir)
@@ -175,8 +176,7 @@ def main(client: OAuth2Session, api_key: str, yt_token: str, yt_playlist_id: str
             playlist_item_ids_to_be_removed = get_playlist_item_ids_to_be_removed(
                 videos, playlist_items)
             print("Adding new items...")
-            add_videos_to_playlist(client, api_key, yt_token,
-                                video_ids_to_be_added_to_playlist, yt_playlist_id)
+            add_videos_to_playlist(client, api_key, yt_token, video_ids_to_be_added_to_playlist, yt_playlist_id)
             print("Removing old items...")
             remove_videos_from_playlist(
                 client, api_key, yt_token, playlist_item_ids_to_be_removed)
